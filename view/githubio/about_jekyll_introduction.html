@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>うにてぃっぷす - Jekyll導入について</title>
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
+  </head>
+
+  <body>
+    <!--boby全体-->
+    <div class="container">
+      <!--ヘッダー-->
+      <header class="header">
+        <h1 class="header__title">うにてぃっぷす</h1>
+      </header>
+  
+      <!--パンくずリスト-->
+      <nav class="bread-crumbs">
+        <div class="bread-crumbs_items_row">
+          <li class="bread-crumbs_item"><a href="../index.html" class="bread-crumbs__link">Home</a></li>
+          <li class="bread-crumbs_item"><a href="#" class="bread-crumbs__link">Jekyll導入について</a></li>
+        </div>
+      </nav>
+  
+      <!--ヘッダー下全体-->
+      <div id="body">
+        <!--右部(メニューバー)-->
+        <div id="menu_bar">
+          <!--検索ボックス-->
+          <div class="search_bar">
+            <input type=text value="" name="tag" id=tag class="search_box">
+            <input type=button id=search class="search_btn" value=検索>
+          </div>
+          <!--もくじ-->
+          <div class="table_of_contents">
+            <p class="table_of_contents_title">もくじ</p>
+            <a href="#subtitle_1" class="index_lang">・Jekyllとは</a>
+            <a href="#subtitle_2" class="index_lang">・調査した導入手順</a>
+            <a href="#subtitle_3" class="index_lang">・調査した内容</a>
+            <a href="#subtitle_4" class="index_lang">・備考</a>
+          </div>
+        </div>
+  
+        <!--左部(本文)-->
+        <div id="main">
+          <!--Tips一覧部-->
+          <div id="tips_detail">
+            <!--Tipsタイトル-->
+            <div id="tips_title">
+              <div>Jekyll導入について</div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div class="heading_1"><a id="subtitle_1">Jekyllとは</a></div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">Github ioでWEbサイトを作成する際にRubygemsとして配布されているJekyll(ジキル)を導入するとマークダウンのファイルをHTMLに変換してくれるので、記事を簡単に投稿できるらしい。</p>
+                  <p class="main_text">参考：<a href="http://jekyllrb-ja.github.io/" target="_blank" class="link_in_contents">http://jekyllrb-ja.github.io/</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div class="heading_1"><a id="subtitle_2">調査した導入手順</a></div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="heading_3">1. ruby導入</p>
+                  <p class="main_text">ruby 2.4.5p335 (2018-10-18 revision 65137) [x86_64-linux]　導入済み</p>
+                  <br>
+                  <p class="heading_3">2. rbenv導入</p>
+                  <p class="main_text">rbenv 1.1.2-34-g0843745　導入済み</p>
+                  <br>
+                  <p class="heading_3">3. bundler導入</p>
+                  <p class="main_text">Bundler version 2.2.30　導入済み</p>
+                  <br>
+                  <p class="heading_3">4. Jekyll導入</p>
+                  <p class="main_text"><code>gem install jekyll</code>を実行</p>
+                  <p class="main_text"><code>jekyll -v</code>で導入されたバージョンを確認</p>
+                  <div class="code_frame">
+                    <p class="code">jekyll -v</p>
+                    <p class="code">jekyll 4.2.1</p>
+                  </div>
+                  <br>
+                  <p class="heading_3">5. jekyllでプロジェクトを立ち上げる</p>
+                  <p class="main_text"><code>jekyll new [Githubのリポジトリ名]</code>を実行</p>
+                  <br>
+                  <p class="heading_3">6. ディレクトリ移動</p>
+                  <p class="main_text"><code>cd [Githubのリポジトリ名]</code>を実行</p>
+                  <br>
+                  <p class="heading_3">7. サーバー起動</p>
+                  <p class="main_text"><code>bundle exec jekyll s</code>を実行</p>
+                  <br>
+                  <p class="heading_3">8. ターミナルに表示されたURLにアクセスして表示確認</p>
+                  <p class="main_text">→アクセスできない！</p>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div class="heading_1"><a id="subtitle_3">調査した内容</a></div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="heading_2">・オプション追加して<code>jekyll s</code>を実行</p>
+                  <p class="main_text"><a href="https://worktoolsmith.com/jekyll-vagrant-address/" target="_blank" class="link_in_contents">VagrantでJekyllを動かしてもlocalhostで接続できない</a>のサイトを参考に以下のコマンドを実行したが状況は変わらず。</p>
+                  <div class="code_frame">
+                    <p class="code">bundle exec jekyll s --host 0.0.0.0</p>
+                  </div>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">・ポート番号を変更</p>
+                  <p class="main_text">以下のコマンドを実行してポート番号を変更したが変わらず。</p>
+                  <div class="code_frame">
+                    <p class="code">bundle exec jekyll s -P 5000</p>
+                  </div>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">・URLの末尾にhtml名を記載</p>
+                  <p class="main_text"><code>http://localhost:4000/index.html</code>のように、URLの末尾にhomeとして表示するHTML名を記載してアクセスしたが変わらず。</p>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div class="heading_1"><a id="subtitle_4">備考</a></div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">vagrant が悪さをしている…？</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
