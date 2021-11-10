@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>うにてぃっぷす</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css">
+  </head>
+
+  <body>
+    <!--boby全体-->
+    <div class="container">
+      <!--ヘッダー-->
+      <header class="header">
+        <h1 class="header__title">うにてぃっぷす</h1>
+      </header>
+      <!--パンくずリスト-->
+      <nav class="bread-crumbs">
+        <div class="bread-crumbs_items_row">
+          <li class="bread-crumbs_item"><a href="#" class="bread-crumbs__link">Home</a></li>
+        </div>
+      </nav>
+
+      <!--ヘッダー下全体-->
+      <div id="body">
+        <!--右部(メニューバー)-->
+        <div id="menu_bar">
+          <!--検索ボックス-->
+          <div class="search_bar">
+            <input type=text value="" name="tag" id=tag class="search_box">
+            <input type=button id=search class="search_btn" value=検索>
+          </div>
+          <!--もくじ-->
+          <div class="table_of_contents">
+            <p class="table_of_contents_title">もくじ</p>
+            <a href="#lang_githubio" class="index_lang">・Github io</a>
+            <a href="#lang_c" class="index_lang">・C</a>
+            <a href="#lang_c#" class="index_lang">・C#</a>
+            <a href="#lang_c++" class="index_lang">・C++</a>
+            <a href="#lang_java" class="index_lang">・Java</a>
+            <a href="#lang_javascript" class="index_lang">・JavaScript</a>
+            <a href="#lang_jquery" class="index_lang">・jQuery</a>
+          </div>
+        </div>
+        <!--左部(本文)-->
+        <div id="main">
+          <!--ページ説明-->
+          <div id="page_explanation">
+            <div> System1 Unit2のメンバーが使うTipsサイトです。<br>作業に詰まったとき、備忘録を残したいときに覗いてください。</div>
+          </div>
+          <!--Tips一覧部-->
+          <div id="tips_list">
+            <div class="heading_1">Tips一覧</div>
+            <div class="textarea">
+              <div class="lang_div">
+                <a id="lang_githubio" class="heading_2">Github io</a>
+                <a href="#" id="githubio_1" class="tips_contents">・Jekyll導入について</a>
+              </div>
+              <div class="lang_div">
+                <a id="lang_c" class="heading_2">C</a>
+              </div>
+              <div class="lang_div">
+                <a id="lang_c#" class="heading_2">C#</a>
+              </div>
+              <div class="lang_div">
+                <a id="lang_c++" class="heading_2">C++</a>
+              </div>
+              <div class="lang_div">
+                <a id="lang_java" class="heading_2">Java</a>
+              </div>
+              <div class="lang_div">
+                <a id="lang_javascript" class="heading_2">JavaScript</a>
+              </div>
+              <div class="lang_div">
+                <a id="lang_jquery" class="heading_2">jQuery</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
