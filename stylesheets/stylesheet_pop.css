@@ -1,0 +1,280 @@
+/* タグ全体 */
+html, h1, ol {
+  margin: 0px;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+code {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 0.1em 0.4em;
+  font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  border-radius: 4px;
+}
+
+/*----------*/
+/* 共通CSS  */
+/*----------*/
+
+/* body全体 */
+body {
+  background-color: #FFFFFF;
+  margin: 0px;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO", "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro";
+}
+  
+/* ヘッダー*/
+header {
+  text-align: center;
+  background-color: #9AABB9;
+  color: #FFFFFF;
+  padding: 100px 50px;
+  font-size: 20px;
+  margin: 50px 0 0 0;
+}
+
+/* パンくずリスト */
+.bread-crumbs {
+  margin: 0 5%;
+  padding: 0 0 0 20px;
+}
+/* パンくず li */
+.bread-crumbs_items_row {
+  margin: 20px 0;
+}
+/* パンくずブロック */
+.bread-crumbs_item {
+  display: inline;
+  line-height: 30px;
+}
+/* > について*/
+.bread-crumbs_item::after {
+  content: '>';
+  font-size: 12px;
+  padding-left: 0.4em;
+  color: #000;
+}
+/*最後の > を消す*/
+.bread-crumbs_item:last-child:after {
+  content: '';
+}
+/* 個々のパンくず */
+.bread-crumbs__link {
+  text-decoration: none;
+  color: #000;
+  margin: 3px;
+}
+
+/* ヘッダー下全体 */
+#body {
+  max-width: 2000px;
+  margin: 0 5%;
+  display: flex;
+}
+
+/* ページ説明 */
+#page_explanation {
+  background-color: #F5F5F5;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+/* Tips一覧 */
+#tips_list{
+  background-color: #FFFFFF;
+  margin: 50px 0;
+}
+
+/* 左(本文) */
+#main {
+  display: inline-block;
+  width: 74%;
+  margin: 30px 0 0 4.5%;
+  order: 1;
+}
+
+/* 右メニュー */
+#menu_bar {
+  background-color: #F5F5F5;
+  display: inline-block;
+  width: 21%;
+  height: fit-content;
+  vertical-align: top;
+  padding: 30px;
+  border-radius: 30px;
+  margin: 30px 0 0 0;
+}
+
+/* 検索バー */
+.search_bar{
+  display: block;
+}
+/* 検索ボックス */
+.search_box {
+  display: inline-block;
+  width: 70%;
+}
+/* 検索ボタン */
+.search_btn {
+  display: inline-block;
+}
+  
+/* 検索以下もくじ全体 */
+.table_of_contents {
+  margin: 30px 0 0 0;
+}
+/* もくじ文字 */
+.table_of_contents_title {
+  margin: 0 0 30px 0;
+  font-size: 23px;
+}
+/* もくじの言語 */
+.index_lang{
+  display: block;
+  text-decoration: none;
+  margin: 0 20px 20px 20px;
+}
+
+/* 見出し１ */
+.heading_1 {
+  color: #505050;
+  padding: 1em;
+  display: inline-block;
+  line-height: 1.3;
+  background: #e2b49a;
+  vertical-align: middle;
+  border-radius: 25px 0px 0px 25px;
+  font-size: 25px;
+}
+/* 見出し１の装飾 */
+.heading_1::before {
+  content: '●';
+  color: white;
+  margin-right: 15px;
+}
+
+/* 見出し２ */
+.heading_2 {
+  font-size: 20px;
+  padding: 0 30px 10px 20px;
+  line-height: 50px;
+  font-weight: bold;
+  text-indent: 1em;
+  margin: 0;
+}
+.heading_2::before {
+  content: '';
+  height: 20px;
+  width: 10px;
+  margin-top: 3px;
+  margin-left: -28px;
+  position: absolute;
+  background: #9aabb9;
+  box-shadow: 0 20px 0 #103446;
+}
+
+/* Tips一覧下 */
+.textarea {
+  padding: 30px 0;
+}
+
+/* 言語エリア */
+.lang_div {
+  padding: 30px;
+  background-color: #F5F5F5;
+  margin: 0 0 30px 0;
+  border-radius: 30px;
+}
+
+/* Tipsリンク部 */
+.tips_contents {
+  display: block;
+  font-size: 20px;
+  padding: 20px 0 0 50px;
+}
+
+
+/*---------------*/
+/* TipsページCSS */
+/*---------------*/
+
+/* Tips全体 */
+#tips_detail {
+  background-color: #FFFFFF;
+  padding: 0 25px 30px 25px;
+  margin: 0 0 50px 0;
+}
+
+/* Tipsページのタイトル */
+#tips_title {
+  position: relative;
+  padding: 100px 40px;
+  background-color: #FFFFFF;
+  border: 10px solid #E9C77B;
+  margin: 0 0 80px 0;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+#tips_title::before,
+#tips_title::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  border-style: solid;
+  border-color: transparent;
+}
+#tips_title::before {
+  left: -10px;
+  top: 240px;
+  border-width: 0 15px 15px 0;
+  border-right-color: #96793A;
+}
+#tips_title::after {
+  content: '';
+  top: 240px;
+  right: -10px;
+  border: none;
+  border-width: 15px 15px 0 0;
+  border-bottom: solid 15px transparent;
+  border-left: solid 15px #96793A;
+}
+
+/* 本文 */
+.main_text {
+  display: block;
+  font-size: 15px;
+  padding: 0 70px;
+  margin: 0;
+  line-height: 30px;
+}
+
+/* 本文中のリンク */
+.link_in_contents {
+  color: blue;
+}
+
+/* コードブロック */
+.code_frame {
+  background-color: #364549;
+  margin: 20px;
+  padding: 20px 30px;
+}
+
+/* コード内の文字 */
+.code {
+  color: #e3e3e3;
+  font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+}
+
+/* 見出し３ */
+.heading_3 {
+  font-size: 16px;
+  padding: 0 30px;
+  line-height: 50px;
+  font-weight: bold;
+  text-indent: 0em;
+  margin: 0;
+}
