@@ -26,7 +26,10 @@ function chenge_css_btn() {
 // デザイン読み込み
 window.onload = function(){
   var elem = document.getElementById("css_design");
+
   var load_design = localStorage.getItem('css_design_name');
-  var page_css = "../../stylesheets/" + load_design;
-  elem.href = page_css;
+  if (page_css != null) {
+    var page_css = "../../stylesheets/" + load_design;
+    elem.href = page_css;
+  }
 }

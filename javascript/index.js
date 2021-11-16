@@ -28,6 +28,8 @@ window.onload = function(){
   var elem = document.getElementById("css_design");
 
   var load_design = localStorage.getItem('css_design_name');
-  var home_css = "../stylesheets/" + load_design;
-  elem.href = home_css;
+  if (load_design != null) {
+    var home_css = "../stylesheets/" + load_design;
+    elem.href = home_css;
+  }
 }
