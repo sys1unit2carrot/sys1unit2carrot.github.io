@@ -7,7 +7,7 @@ function chenge_css_btn() {
     case "simple_green":
       css = "stylesheet.css";
       break;
-    case "simple_darkmode":
+    case "simple_darkmode_purple":
       css = "stylesheet_darkmode_purple.css";
       break;
     case "pop_blue":
