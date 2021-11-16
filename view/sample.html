@@ -3,7 +3,8 @@
   <head>
     <meta charset='utf-8'>
     <title>うにてぃっぷす - サンプルページ</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css">
+    <link id="css_design" rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css">
+    <script src="../javascript/index.js"></script>
   </head>
 
   <body>
@@ -28,16 +29,32 @@
         <div id="menu_bar">
           <!--検索ボックス-->
           <div class="search_bar">
-            <input type=text value="" name="tag" id=tag class="search_box">
-            <input type=button id=search class="search_btn" value=検索>
+            <p class="menu_title">検索</p>
+            <div class="search_area">
+              <input type=text value="" name="tag" id=tag class="search_box">
+              <input type=button id=search class="search_btn" value=検索>
+            </div>
           </div>
           <!--もくじ-->
           <div class="table_of_contents">
-            <p class="table_of_contents_title">もくじ</p>
+            <p class="menu_title">もくじ</p>
             <a href="#subtitle_1" class="index_lang">・見出し１</a>
             <a href="#subtitle_2" class="index_lang">・見出し２</a>
             <a href="#subtitle_3" class="index_lang">・見出し３</a>
             <a href="#subtitle_4" class="index_lang">・見出し４</a>
+          </div>
+          <!--デザイン変更ボタン-->
+          <div class="chenge_design_area">
+            <div class="menu_title">デザイン変更</div>
+            <div class="select_area">
+              <select id="select_design" class="design_bar">
+                <option value="simple_green">シンプル　緑</option>
+                <option value="simple_darkmode_purple">シンプル　ダークモード</option>
+                <option value="pop_blue">ポップ　青</option>
+                <option value="pop_pink">ポップ　ピンク</option>
+                </select>
+              <input id="chenge_design_btn" class="design_btn" type="button" value="変更" onclick="chenge_css_btn();">
+            </div>
           </div>
         </div>
   
@@ -53,7 +70,7 @@
             <!--見出しブロック-->
             <div class="article_block">
               <!--題字-->
-              <div class="heading_1"><a id="subtitle_1">見出し１</a></div>
+              <div class="heading_1"><a id="subtitle_1" class="heading_1_text">見出し１</a></div>
               <!--本文-->
               <div class="textarea">
                 <div class="lang_div">
@@ -65,7 +82,7 @@
             <!--見出しブロック-->
             <div class="article_block">
               <!--題字-->
-              <div class="heading_1"><a id="subtitle_2">見出し２</a></div>
+              <div class="heading_1"><a id="subtitle_2" class="heading_1_text">見出し２</a></div>
               <!--本文-->
               <div class="textarea">
                 <div class="lang_div">
@@ -77,7 +94,7 @@
             <!--見出しブロック-->
             <div class="article_block">
               <!--題字-->
-              <div class="heading_1"><a id="subtitle_3">見出し３</a></div>
+              <div class="heading_1"><a id="subtitle_3" class="heading_1_text">見出し３</a></div>
               <!--本文-->
               <div class="textarea">
                 <div class="lang_div">
@@ -89,7 +106,7 @@
             <!--見出しブロック-->
             <div class="article_block">
               <!--題字-->
-              <div class="heading_1"><a id="subtitle_4">見出し４</a></div>
+              <div class="heading_1"><a id="subtitle_4" class="heading_1_text">見出し４</a></div>
               <!--本文-->
               <div class="textarea">
                 <div class="lang_div">
