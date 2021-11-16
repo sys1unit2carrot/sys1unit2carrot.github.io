@@ -40,34 +40,29 @@ header {
   margin: 0 5%;
   padding: 0 0 0 20px;
 }
-/* パンくず li */
 .bread-crumbs_items_row {
   margin: 20px 0;
 }
-/* パンくずブロック */
 .bread-crumbs_item {
   display: inline;
   line-height: 30px;
 }
-/* > について*/
 .bread-crumbs_item::after {
   content: '>';
   font-size: 12px;
   padding-left: 0.4em;
   color: #000;
 }
-/*最後の > を消す*/
 .bread-crumbs_item:last-child:after {
   content: '';
 }
-/* 個々のパンくず */
 .bread-crumbs__link {
   text-decoration: none;
   color: #000;
   margin: 3px;
 }
 
-/* ヘッダー下全体 */
+/* ヘッダー下 */
 #body {
   max-width: 2000px;
   margin: 0 5%;
@@ -87,7 +82,7 @@ header {
   margin: 50px 0;
 }
 
-/* 左(本文) */
+/* 本文 */
 #main {
   display: inline-block;
   width: 74%;
@@ -95,7 +90,7 @@ header {
   order: 1;
 }
 
-/* 右メニュー */
+/* メニュー */
 #menu_bar {
   background-color: #F5F5F5;
   display: inline-block;
@@ -107,39 +102,99 @@ header {
   margin: 30px 0 0 0;
 }
 
-/* 検索バー */
+/* メニュー見出し */
+.menu_title {
+  font-size: 20px;
+  padding: 0 30px 10px 20px;
+  line-height: 50px;
+  font-weight: bold;
+  text-indent: 1em;
+  margin: 0;
+}
+.menu_title::before {
+  content: '';
+  height: 20px;
+  width: 10px;
+  margin-top: 3px;
+  margin-left: -28px;
+  position: absolute;
+  background: #9aabb9;
+  box-shadow: 0 20px 0 #103446;
+}
+
+/* 検索エリア全体 */
 .search_bar{
   display: block;
 }
-/* 検索ボックス */
+.search_area {
+  margin: 20px 0 0 10px;
+}
 .search_box {
   display: inline-block;
-  width: 70%;
+  width: 60%;
+  padding: 8px 0;
+  border: 2px solid #e2b49a;
+  border-radius: 10px;
 }
-/* 検索ボタン */
 .search_btn {
   display: inline-block;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  background: #e2b49a;
+  border: 2px solid #e2b49a;
+  height: 36px;
+  border-radius: 10px;
 }
   
-/* 検索以下もくじ全体 */
+/* もくじ */
 .table_of_contents {
-  margin: 30px 0 0 0;
+  margin: 40px 0;
 }
-/* もくじ文字 */
-.table_of_contents_title {
-  margin: 0 0 30px 0;
-  font-size: 23px;
+.menu_title {
+  margin: 0 0 10px 0;
+  font-size: 20px;
 }
-/* もくじの言語 */
 .index_lang{
   display: block;
   text-decoration: none;
   margin: 0 20px 20px 20px;
 }
 
+/* セレクトボックス */
+.design_bar {
+  margin: 10px 0 0 0;
+  padding: 8px 15px;
+  border: 2px solid #e2b49a;
+  appearance: none;
+  width: 50%;
+  border-radius: 10px;
+}
+.select_area::before {
+  position: relative;
+  top: 15px;
+  left: 47%;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #e2b49a;
+  pointer-events: none;
+}
+.design_btn {
+  margin: 10px 0 0 0;
+  padding: 5px 10px;
+  background: #e2b49a;
+  border: 2px solid #e2b49a;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
+
+
 /* 見出し１ */
 .heading_1 {
-  color: #505050;
+  color: #FFFFFF;
   padding: 1em;
   display: inline-block;
   line-height: 1.3;
@@ -148,11 +203,16 @@ header {
   border-radius: 25px 0px 0px 25px;
   font-size: 25px;
 }
-/* 見出し１の装飾 */
+.subtitle {
+  color: #FFFFFF;
+}
 .heading_1::before {
   content: '●';
   color: white;
   margin-right: 15px;
+}
+.heading_1_text{
+  color: #FFFFFF;
 }
 
 /* 見出し２ */
@@ -179,8 +239,6 @@ header {
 .textarea {
   padding: 30px 0;
 }
-
-/* 言語エリア */
 .lang_div {
   padding: 30px;
   background-color: #F5F5F5;
@@ -262,8 +320,6 @@ header {
   margin: 20px;
   padding: 20px 30px;
 }
-
-/* コード内の文字 */
 .code {
   color: #e3e3e3;
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
