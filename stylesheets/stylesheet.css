@@ -143,6 +143,7 @@ header {
   border: 2px solid #76DBA8;
   appearance: none;
   width: 50%;
+  background: #FFFFFF;
 }
 .select_area::before {
   position: relative;
