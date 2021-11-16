@@ -39,36 +39,29 @@ header {
 .bread-crumbs {
   margin: 0 5%;
 }
-/* パンくず li */
 .bread-crumbs_items_row {
   margin: 20px 0;
 }
-/* パンくずブロック */
 .bread-crumbs_item {
-  /*横並び*/
   display: inline;
-  /*縦方向中央揃え*/
   line-height: 30px;
 }
-/* > について*/
 .bread-crumbs_item::after {
   content: '>';
   font-size: 12px;
   padding-left: 0.4em;
   color: #000;
 }
-/*最後の > を消す*/
 .bread-crumbs_item:last-child:after {
   content: '';
 }
-/* 個々のパンくず */
 .bread-crumbs__link {
   text-decoration: none;
   color: #000;
   margin: 3px;
 }
 
-/* ヘッダー下全体 */
+/* ヘッダー下 */
 #body {
   max-width: 2000px;
   margin: 0 5%;
@@ -88,7 +81,7 @@ header {
   padding: 30px 25px;
 }
 
-/* 左(本文) */
+/* 本文 */
 #main {
   display: inline-block;
   width: 74%;
@@ -96,7 +89,7 @@ header {
   order: 1;
 }
 
-/* 右メニュー */
+/* メニュー */
 #menu_bar {
   background-color: #FFFFFF;
   display: inline-block;
@@ -106,34 +99,69 @@ header {
   padding: 30px;
   order: 2;
 }
+/* メニュー題字 */
+.menu_title {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  border-bottom: 1.5px solid #000;
+}
 
-/* 検索バー */
+/* 検索 */
 .search_bar{
   display: block;
 }
-/* 検索ボックス */
+.search_area {
+  margin: 20px 0 0 10px;
+}
 .search_box {
   display: inline-block;
-  width: 70%;
+  width: 60%;
+  padding: 8px 0;
+  border: 2px solid #76DBA8;
 }
-/* 検索ボタン */
 .search_btn {
   display: inline-block;
+  padding: 5px 10px;
+  background: #D9FFEC;
+  border: 2px solid #76DBA8;
+  height: 36px;
 }
 
-/* 検索以下もくじ全体 */
+/* もくじ */
 .table_of_contents {
-  margin: 20px 0 0 0;
+  margin: 40px 0;
 }
-/* もくじ文字 */
-.table_of_contents_title {
-  margin: 0 0 10px 0;
-  font-size: 20px;
-}
-/* もくじの言語 */
 .index_lang{
   display: block;
   text-decoration: none;
+}
+
+/* デザイン変更 */
+.design_bar {
+  margin: 10px 0 0 0;
+  padding: 8px 15px;
+  border: 2px solid #76DBA8;
+  appearance: none;
+  width: 50%;
+}
+.select_area::before {
+  position: relative;
+  top: 15px;
+  left: 47%;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #76DBA8;
+  pointer-events: none;
+}
+.design_btn {
+  margin: 10px 0 0 0;
+  padding: 5px 10px;
+  background: #D9FFEC;
+  border: 2px solid #76DBA8;
 }
 
 /* 見出し１ */
@@ -142,7 +170,6 @@ header {
   font-size: 25px;
   padding: 18px 40px;
 }
-/* 見出し１の装飾 */
 .heading_1::before {
   content: '';
   width: 25px;
@@ -168,18 +195,17 @@ header {
 .textarea {
   padding: 40px 0;
 }
-
-/* 言語エリア */
 .lang_div {
   padding: 20px 0 50px 0;
 }
 
-/* Tipsリンク部 */
+/* Tipsリンク */
 .tips_contents {
   display: block;
   font-size: 20px;
   padding: 20px 0 0 50px;
 }
+
 
 /*---------------*/
 /* TipsページCSS */
@@ -191,9 +217,7 @@ header {
   padding: 30px 25px;
   margin: 0 0 50px 0;
 }
-
-/* Tipsページのタイトル */
-#tips_title {
+#tips_title_frame {
   padding: 50px 0 100px 0;
   text-align: center;
   font-size: 40px;
@@ -218,8 +242,6 @@ header {
   margin: 20px;
   padding: 20px 30px;
 }
-
-/* コード内の文字 */
 .code {
   color: #e3e3e3;
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
