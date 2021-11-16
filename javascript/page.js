@@ -28,7 +28,7 @@ window.onload = function(){
   var elem = document.getElementById("css_design");
 
   var load_design = localStorage.getItem('css_design_name');
-  if (page_css != null) {
+  if (load_design != null) {
     var page_css = "../../stylesheets/" + load_design;
     elem.href = page_css;
   }
