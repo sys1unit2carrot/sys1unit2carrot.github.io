@@ -30,7 +30,7 @@ function chenge_css_btn() {
 }
 
 // デザイン読み込み
-window.onload = function(){
+window.onload = function() {
   var elem = document.getElementById("css_design");
   var load_design = localStorage.getItem('css_design_name');
   var load_design_index = localStorage.getItem('css_design_index');
@@ -41,4 +41,14 @@ window.onload = function(){
     var select_box = document.getElementById("select_design");
     select_box.options[load_design_index].selected = true;
   }
-}
+
+  // もくじ出力
+  var elements = document.querySelectorAll(".heading_2");
+  if (elements && elements.length) {
+    let contents = '';
+    elements.forEach((elements, i) => {
+      contents += `<a href="#${elements.id}" class="index_lang">・${elements.textContent}</a>`;
+    })
+    document.getElementById("table_of_contents_index").innerHTML += `${contents}`;
+  };
+};

@@ -5,16 +5,16 @@ function chenge_css_btn() {
   var elem = document.getElementById("css_design");
   var select_design = document.getElementById("select_design").value;
   switch (select_design) {
-    case "simple_green":
+    case "simple_green": //緑
       css = "stylesheet.css";
       break;
     case "simple_darkmode_purple":
       css = "stylesheet_darkmode_purple.css";
       break;
-    case "pop_blue":
+    case "pop_blue": //青
       css = "stylesheet_pop.css";
       break;
-    case "pop_pink":
+    case "pop_pink": //ピンク
       css ="stylesheet_pop_pink.css";
       break;
     default: // エラー
@@ -23,20 +23,20 @@ function chenge_css_btn() {
       break;
   }
   var index_num = select_box.selectedIndex;
-  var page_css = "../../stylesheets/" + css;
+  var page_css = "../stylesheets/" + css;
   elem.href = page_css;
   localStorage.setItem('css_design_name', css);
   localStorage.setItem('css_design_index', index_num);
 }
 
 // デザイン読み込み
-window.onload = function(){
+window.onload = function() {
   var elem = document.getElementById("css_design");
   var load_design = localStorage.getItem('css_design_name');
   var load_design_index = localStorage.getItem('css_design_index');
 
   if (load_design != null) {
-    var page_css = "../../stylesheets/" + load_design;
+    var page_css = "../stylesheets/" + load_design;
     elem.href = page_css;
     var select_box = document.getElementById("select_design");
     select_box.options[load_design_index].selected = true;
