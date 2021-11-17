@@ -22,7 +22,7 @@ function chenge_css_btn() {
       alert('変更できませんでした。');
       break;
   }
-  var select_box = document.getElementById("select_design");
+  var index_num = select_box.selectedIndex;
   var home_css = "../stylesheets/" + css;
   elem.href = home_css;
   localStorage.setItem('css_design_name', css);
@@ -40,6 +40,5 @@ window.onload = function(){
     elem.href = home_css;
     var select_box = document.getElementById("select_design");
     select_box.options[load_design_index].selected = true;
-    console.log(load_design_index);
   }
 }
