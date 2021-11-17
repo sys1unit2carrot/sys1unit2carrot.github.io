@@ -17,6 +17,9 @@ function chenge_css_btn() {
     case "pop_pink":
       css ="stylesheet_pop_pink.css";
       break;
+    case "pop_yellow":
+      css ="stylesheet_pop_yellow.css";
+      break;
     default: // エラー
       css = "stylesheet.css";
       alert('変更できませんでした。');
