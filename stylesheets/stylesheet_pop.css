@@ -35,31 +35,29 @@ header {
   margin: 50px 0 0 0;
 }
 
-/* パンくずリスト */
-.bread-crumbs {
-  margin: 0 5%;
-  padding: 0 0 0 20px;
+/* Homeリンク */
+.return_bar{
+  display: flex;
+  margin: 30px 5% 0 5%;
+  font-size: 17px;
 }
-.bread-crumbs_items_row {
-  margin: 20px 0;
+.home_url{
+  display: inline-block;
+  margin: 0 0 0 30px;
 }
-.bread-crumbs_item {
-  display: inline;
-  line-height: 30px;
-}
-.bread-crumbs_item::after {
-  content: '>';
-  font-size: 12px;
-  padding-left: 0.4em;
-  color: #000;
-}
-.bread-crumbs_item:last-child:after {
+.home_url::before{
   content: '';
+  display: inline-block;
+  background-image: url("../pictures/left_arrow_pop_black.png");
+  height: 15px;
+  width: 15px;
+  background-size: contain;
+  vertical-align: middle;
+  margin: 0 10px 3px 0;
 }
-.bread-crumbs__link {
-  text-decoration: none;
-  color: #000;
-  margin: 3px;
+.here_url {
+  display: inline-block;
+  margin: 0 0 0 30px;
 }
 
 /* ヘッダー下 */
@@ -127,22 +125,23 @@ header {
   display: block;
 }
 .search_area {
-  margin: 20px 0 0 10px;
+  margin: 20px 0 0 20px;
 }
 .search_box {
   display: inline-block;
-  width: 60%;
+  width: 62%;
   padding: 8px 0;
   border: 2px solid #e2b49a;
+  background-color: #FFFFFF;
   border-radius: 10px;
 }
 .search_btn {
-  display: inline-block;
   padding: 5px 10px;
   color: #FFFFFF;
   background: #e2b49a;
   border: 2px solid #e2b49a;
   height: 36px;
+  width: 30%;
   border-radius: 10px;
 }
   
@@ -162,18 +161,20 @@ header {
 
 /* セレクトボックス */
 .design_bar {
-  margin: 10px 0 0 0;
-  padding: 8px 15px;
+  width: 62%;
+  padding: 8px 40px 8px 15px;
   border: 2px solid #e2b49a;
-  appearance: none;
-  width: 50%;
+  background-color: #FFFFFF;
   border-radius: 10px;
-  background: #FFFFFF;
+  appearance: none;
+}
+.select_area {
+  margin: 20px 10px 0 12px;
 }
 .select_area::before {
   position: relative;
   top: 15px;
-  left: 47%;
+  left: 56%;
   width: 0;
   height: 0;
   padding: 0;
@@ -184,14 +185,15 @@ header {
   pointer-events: none;
 }
 .design_btn {
-  margin: 10px 0 0 0;
   padding: 5px 10px;
+  color: #FFFFFF;
   background: #e2b49a;
   border: 2px solid #e2b49a;
+  height: 36px;
+  width: 30%;
   border-radius: 10px;
-  color: #FFFFFF;
+  text-align: center;
 }
-
 
 /* 見出し１ */
 .heading_1 {
