@@ -59,10 +59,17 @@ header {
 }
 
 /* ヘッダー下 */
-#body {
-  max-width: 2000px;
-  margin: 0 5%;
-  display: flex;
+@media screen and (max-width: 996px) {
+  #body {
+    margin: 0 5%;
+    display: block;
+  }
+}
+@media screen and (min-width: 996px) {
+  #body {
+    margin: 0 5%;
+    display: flex;
+  }
 }
 
 /* ページ説明 */
@@ -79,33 +86,72 @@ header {
 }
 
 /* 本文 */
-#main {
-  display: inline-block;
-  width: 74%;
-  margin-right: 1.5%;
-  order: 1;
+@media screen and (max-width: 996px) {
+  #main {
+    display: inline-block;
+    width: 100%;
+    margin-right: 1.5%;
+    order: 1;
+  }
+}
+@media screen and (min-width: 996px) {
+  #main {
+    display: inline-block;
+    width: 74%;
+    margin-right: 1.5%;
+    order: 1;
+  }
 }
 
 /* メニュー */
-#menu_bar {
-  background-color: #252B32;
-  display: inline-block;
-  width: 21%;
-  height: fit-content;
-  vertical-align: top;
-  padding: 30px;
-  order: 2;
+@media screen and (max-width: 996px) {
+  #menu_bar {
+    background-color: #252B32;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 80px 0;
+    order: 2;
+    }
+}
+@media screen and (min-width: 996px) {
+  #menu_bar {
+    display: inline-block;
+    width: 21%;
+    background-color: #252B32;
+    height: fit-content;
+    vertical-align: top;
+    padding: 30px;
+    order: 2;
+  }
 }
 /* メニュー題字 */
-.menu_title {
-  margin: 0 0 10px 0;
-  font-size: 20px;
-  border-bottom: 1.5px solid #FFFFFF;
+@media screen and (max-width: 996px) {
+  .menu_title {
+    margin: 0 0 10px 0;
+    padding: 0 0 0 3%;
+    font-size: 20px;
+    border-bottom: 1.5px solid #FFFFFF;
+  }
+}
+@media screen and (min-width: 996px) {
+  .menu_title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    border-bottom: 1.5px solid #FFFFFF;
+  }
 }
 
 /* 検索 */
-.search_bar{
-  display: block;
+@media screen and (max-width: 996px) {
+  .search_bar{
+    display: block;
+    padding: 30px 30px 0 30px;
+  }
+}
+@media screen and (min-width: 996px) {
+  .search_bar{
+    display: block;
+  }
 }
 .search_area {
   margin: 20px 0 0 10px;
@@ -126,15 +172,33 @@ header {
 }
 
 /* もくじ */
-.table_of_contents {
-  margin: 40px 0;
+@media screen and (max-width: 996px) {
+  .table_of_contents {
+    margin: 40px 0;
+    padding: 0 30px;
+  }
+}
+@media screen and (min-width: 996px) {
+  .table_of_contents {
+    margin: 40px 0;
+  }
 }
 .index_lang{
   display: block;
   text-decoration: none;
 }
+@media screen and (max-width: 996px) {
+  #table_of_contents_index{
+    padding: 0 3%;
+  }
+}
 
 /* デザイン変更 */
+@media screen and (max-width: 996px) {
+  .chenge_design_area {
+    padding: 0 30px 30px 30px;
+  }
+}
 .design_bar {
   padding: 8px 40px 8px 15px;
   border: 2px solid #7868E6;
@@ -147,7 +211,7 @@ header {
 }
 .select_area::before {
   position: relative;
-  top: 15px;
+  top: 13px;
   left: 56%;
   width: 0;
   height: 0;

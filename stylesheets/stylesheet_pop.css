@@ -38,7 +38,7 @@ header {
 /* Homeリンク */
 .return_bar{
   display: flex;
-  margin: 30px 5% 0 5%;
+  margin: 30px 5%;
   font-size: 17px;
 }
 .home_url{
@@ -61,10 +61,17 @@ header {
 }
 
 /* ヘッダー下 */
-#body {
-  max-width: 2000px;
-  margin: 0 5%;
-  display: flex;
+@media screen and (max-width: 1192px) {
+  #body {
+    margin: 0 5%;
+    display: block;
+  }
+}
+@media screen and (min-width: 1192px) {
+  #body {
+    margin: 0 5%;
+    display: flex;
+  }
 }
 
 /* ページ説明 */
@@ -75,29 +82,59 @@ header {
 }
 
 /* Tips一覧 */
-#tips_list{
-  background-color: #FFFFFF;
-  margin: 50px 0;
+@media screen and (max-width: 1192px) {
+  #tips_list{
+    background-color: #FFFFFF;
+    margin: 50px 0 0 0;
+  }
+}
+@media screen and (min-width: 1192px) {
+  #tips_list{
+    background-color: #FFFFFF;
+    margin: 50px 0;
+  }
 }
 
 /* 本文 */
-#main {
-  display: inline-block;
-  width: 74%;
-  margin: 30px 0 0 4.5%;
-  order: 1;
+@media screen and (max-width: 1192px) {
+  #main {
+    display: inline-block;
+    width: 100%;
+    margin-right: 1.5%;
+    order: 1;
+  }
+}
+@media screen and (min-width: 1192px) {
+  #main {
+    display: inline-block;
+    width: 74%;
+    margin: 0 0 1.5% 1.5%;
+    order: 1;
+    vertical-align: top;
+  }
 }
 
 /* メニュー */
-#menu_bar {
-  background-color: #F5F5F5;
-  display: inline-block;
-  width: 21%;
-  height: fit-content;
-  vertical-align: top;
-  padding: 30px;
-  border-radius: 30px;
-  margin: 30px 0 0 0;
+@media screen and (max-width: 1192px) {
+  #menu_bar {
+    background-color: #F5F5F5;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 80px 0;
+    order: 2;
+    border-radius: 30px;
+    }
+}
+@media screen and (min-width: 1192px) {
+  #menu_bar {
+    background-color: #F5F5F5;
+    display: inline-block;
+    width: 21%;
+    height: fit-content;
+    vertical-align: top;
+    padding: 30px;
+    border-radius: 30px;
+  }
 }
 
 /* メニュー見出し */
@@ -120,9 +157,17 @@ header {
   box-shadow: 0 20px 0 #103446;
 }
 
-/* 検索エリア全体 */
-.search_bar{
-  display: block;
+/* 検索 */
+@media screen and (max-width: 1192px) {
+  .search_bar{
+    display: block;
+    padding: 30px 30px 0 30px;
+  }
+}
+@media screen and (min-width: 1192px) {
+  .search_bar{
+    display: block;
+  }
 }
 .search_area {
   margin: 20px 0 0 20px;
@@ -146,8 +191,16 @@ header {
 }
   
 /* もくじ */
-.table_of_contents {
-  margin: 40px 0;
+@media screen and (max-width: 1192px) {
+  .table_of_contents {
+    margin: 40px 0;
+    padding: 0 30px;
+  }
+}
+@media screen and (min-width: 1192px) {
+  .table_of_contents {
+    margin: 40px 0;
+  }
 }
 .menu_title {
   margin: 0 0 10px 0;
@@ -158,8 +211,18 @@ header {
   text-decoration: none;
   margin: 0 20px 20px 20px;
 }
+@media screen and (max-width: 1192px) {
+  #table_of_contents_index{
+    padding: 0 3%;
+  }
+}
 
 /* セレクトボックス */
+@media screen and (max-width: 1192px) {
+  .chenge_design_area {
+    padding: 0 30px 40px 30px;
+  }
+}
 .design_bar {
   width: 62%;
   padding: 8px 40px 8px 15px;
@@ -173,7 +236,7 @@ header {
 }
 .select_area::before {
   position: relative;
-  top: 15px;
+  top: 13px;
   left: 56%;
   width: 0;
   height: 0;
