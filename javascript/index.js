@@ -15,10 +15,13 @@ function chenge_css_btn() {
       css = "stylesheet_pop.css";
       break;
     case "pop_pink":
-      css ="stylesheet_pop_pink.css";
+      css = "stylesheet_pop_pink.css";
       break;
     case "pop_yellow":
-      css ="stylesheet_pop_yellow.css";
+      css = "stylesheet_pop_yellow.css";
+      break;
+    case "stylish_blue":
+      css = "stylesheet_stylish_blue.css";
       break;
     default: // エラー
       css = "stylesheet.css";
