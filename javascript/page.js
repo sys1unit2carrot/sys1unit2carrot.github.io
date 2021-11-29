@@ -26,6 +26,9 @@ function chenge_css_btn() {
     case "stylish_blue":
       css = "stylesheet_stylish_blue.css";
       break;
+    case "stylish_accessibility":
+      css = "stylesheet_stylish_accessibility.css";
+      break;
     default: // エラー
       css = "stylesheet.css";
       alert('変更できませんでした。');
