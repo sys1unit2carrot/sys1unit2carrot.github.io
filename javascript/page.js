@@ -20,6 +20,9 @@ function chenge_css_btn() {
     case "pop_yellow":
       css = "stylesheet_pop_yellow.css";
       break;
+    case "pop_accessibility":
+      css ="stylesheet_pop_accessibility.css";
+      break;
     case "stylish_blue":
       css = "stylesheet_stylish_blue.css";
       break;
