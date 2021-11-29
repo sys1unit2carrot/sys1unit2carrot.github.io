@@ -139,6 +139,7 @@ header {
 
 /* メニュー見出し */
 .menu_title {
+  display: block;
   font-size: 20px;
   padding: 0 30px 10px 20px;
   line-height: 50px;
