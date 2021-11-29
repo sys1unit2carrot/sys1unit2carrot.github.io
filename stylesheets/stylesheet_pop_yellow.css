@@ -279,6 +279,7 @@ header {
   margin-right: 15px;
 }
 .heading_1_text{
+  display: inline-block;
   color: #FFFFFF;
 }
 

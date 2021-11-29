@@ -271,6 +271,7 @@ header {
   font-size: 25px;
 }
 .heading_1_text {
+  display: inline-block;
   color: #FFFFFF;
 }
 .heading_1::before {
