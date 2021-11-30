@@ -385,3 +385,9 @@ body {
   text-indent: 0em;
   margin: 0;
 }
+
+/* 本文内画像 */
+.image_in_main_text{
+  padding: 20px 0px 20px 70px;
+  width: 80%;
+}

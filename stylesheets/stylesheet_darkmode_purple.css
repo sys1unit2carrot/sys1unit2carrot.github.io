@@ -296,7 +296,7 @@ header {
 .main_text {
   display: block;
   font-size: 15px;
-  padding: 0 70px;
+  padding: 10px 70px;
   margin: 0;
 }
 
@@ -324,4 +324,10 @@ header {
   margin: 0;
   color: #FFFFFF;
   font-weight: bold;
+}
+
+/* 本文内画像 */
+.image_in_main_text{
+  padding: 20px 0px 20px 70px;
+  width: 80%;
 }
