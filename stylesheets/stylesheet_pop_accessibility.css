@@ -211,6 +211,7 @@ header {
   display: block;
   text-decoration: none;
   margin: 0 20px 20px 20px;
+  width: fit-content;
 }
 @media screen and (max-width: 1192px) {
   #table_of_contents_index{
@@ -318,6 +319,7 @@ header {
   display: block;
   font-size: 20px;
   padding: 20px 0 0 50px;
+  width: fit-content;
 }
 
 

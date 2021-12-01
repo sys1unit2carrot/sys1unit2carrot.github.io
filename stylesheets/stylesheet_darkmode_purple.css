@@ -188,6 +188,7 @@ header {
 .index_lang{
   display: block;
   text-decoration: none;
+  width: fit-content;
 }
 @media screen and (max-width: 996px) {
   #table_of_contents_index{
@@ -273,6 +274,7 @@ header {
   display: block;
   font-size: 20px;
   padding: 20px 0 0 50px;
+  width: fit-content;
 }
 
 
