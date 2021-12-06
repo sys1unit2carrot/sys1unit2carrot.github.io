@@ -12,6 +12,7 @@ code {
   padding: 0.1em 0.4em;
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
   border-radius: 4px;
+  word-break: break-word;
 }
   
 /*----------*/
@@ -26,7 +27,16 @@ body {
 }
   
 /* ヘッダー*/
-@media screen and (max-width: 1192px) {
+@media screen and (max-width: 400px) {
+  header {
+    text-align: center;
+    background-color: #C2DDE4;
+    color: #FFFFFF;
+    padding: 80px 10%;
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 1192px) and (min-width: 400px) {
   header {
     text-align: center;
     background-color: #C2DDE4;
@@ -104,10 +114,20 @@ body {
 }
   
 /* ページ説明 */
-#page_explanation {
-  padding: 30px;
-  border-radius: 30px;
-  text-align: center;
+@media screen and (max-width: 400px) {
+  #page_explanation {
+    padding: 30px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 400px) {
+  #page_explanation {
+    padding: 30px;
+    border-radius: 30px;
+    text-align: center;
+  }
 }
   
 /* Tips一覧 */
@@ -248,7 +268,7 @@ body {
   }
 }
 .design_bar {
-  width: 62%;
+  width: 61%;
   padding: 5px 30px 5px 12px;
   border: 2px solid #C9CBFF;
   background-color: #FFFFFF;
@@ -289,10 +309,21 @@ body {
 }
   
 /* 見出し１ */
-.heading_1 {
-  line-height: 1.3;
-  font-size: 25px;
-  border-bottom: 2px solid #000;
+@media screen and (min-width: 400px) {
+  .heading_1 {
+    line-height: 1.3em;
+    font-size: 25px;
+    border-bottom: 2px solid #000;
+    word-break: break-word;
+  }
+}
+@media screen and (max-width: 400px) {
+  .heading_1 {
+    line-height: 1.3em;
+    font-size: 20px;
+    border-bottom: 2px solid #000;
+    word-break: break-word;
+  }
 }
 .subtitle {
   color: #FFFFFF;
@@ -302,15 +333,29 @@ body {
 }
   
 /* 見出し２ */
-.heading_2 {
-  display: block;
-  width: fit-content;
-  font-size: 20px;
-  padding: 5px 20px;
-  margin: 0 0 10px 20px;
-  background-color: #C2DDE4;
-  color: #FFFFFF;
-  border-left: 5px solid #000;
+@media screen and (min-width: 400px) {
+  .heading_2 {
+    display: block;
+    width: fit-content;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 0 0 10px 20px;
+    background-color: #C2DDE4;
+    color: #FFFFFF;
+    border-left: 5px solid #000;
+  }
+}
+@media screen and (max-width: 400px) {
+  .heading_2 {
+    display: block;
+    width: fit-content;
+    font-size: 18px;
+    padding: 5px 20px;
+    margin: 0 0 5% 0%;
+    background-color: #C2DDE4;
+    color: #FFFFFF;
+    border-left: 5px solid #000;
+  }
 }
 .heading_2::after {
   content: '';
@@ -323,17 +368,35 @@ body {
 .textarea {
   padding: 30px 0;
 }
-.lang_div {
-  padding: 30px;
-  margin: 0 0 30px 0;
+@media screen and (min-width: 400px) {
+  .lang_div {
+    padding: 30px;
+    margin: 0 0 30px 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .lang_div {
+    padding: 20px 0;
+    margin: 0 0 30px 0;
+  }
 }
   
 /* Tipsリンク部 */
-.tips_contents {
-  display: block;
-  font-size: 20px;
-  padding: 20px 0 0 50px;
-  width: fit-content;
+@media screen and (min-width: 400px) {
+  .tips_contents {
+    display: block;
+    font-size: 20px;
+    padding: 20px 0 0 50px;
+    width: fit-content;
+  }
+}
+@media screen and (max-width: 400px) {
+  .tips_contents {
+    display: block;
+    font-size: 13px;
+    padding: 10% 0 0 10%;
+    width: fit-content;
+  }
 }
   
   
@@ -348,34 +411,68 @@ body {
 }
   
 /* Tipsページのタイトル */
-#tips_title {
-  position: relative;
-  padding: 100px 40px;
-  background-color: #FFFFFF;
-  margin: 0 0 80px 0;
-  font-size: 30px;
-  text-align: center;
+@media screen and (min-width: 400px) {
+  #tips_title {
+    position: relative;
+    padding: 100px 40px;
+    background-color: #FFFFFF;
+    margin: 0 0 80px 0;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  #tips_title {
+    position: relative;
+    padding: 30% 10%;
+    background-color: #FFFFFF;
+    margin: 0 0 80px 0;
+    font-size: 30px;
+    text-align: center;
+  }
 }
   
 /* 本文 */
-.main_text {
-  display: block;
-  font-size: 15px;
-  padding: 10px 70px;
-  margin: 0;
-  line-height: 30px;
+@media screen and (min-width: 400px) {
+  .main_text {
+    display: block;
+    font-size: 15px;
+    padding: 10px 70px;
+    margin: 0;
+    line-height: 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main_text {
+    display: block;
+    font-size: 13px;
+    padding: 10px 5%;
+    margin: 0;
+    line-height: 30px;
+  }
 }
   
 /* 本文中のリンク */
 .link_in_contents {
   color: blue;
+  word-break: break-word;
 }
   
 /* コードブロック */
-.code_frame {
-  background-color: #364549;
-  margin: 15px 60px;
-  padding: 20px 30px;
+@media screen and (min-width: 400px) {
+  .code_frame {
+    background-color: #364549;
+    margin: 15px 60px;
+    padding: 20px 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .code_frame {
+    background-color: #364549;
+    margin: 5%;
+    padding: 5%;
+    overflow-x: hidden;
+  }
 }
 .code {
   color: #e3e3e3;
@@ -383,17 +480,34 @@ body {
 }
   
 /* 見出し３ */
-.heading_3 {
-  font-size: 16px;
-  padding: 0 30px;
-  line-height: 50px;
-  font-weight: bold;
-  text-indent: 0em;
-  margin: 0;
+@media screen and (min-width: 400px) {
+  .heading_3 {
+    font-size: 16px;
+    padding: 0 30px;
+    line-height: 50px;
+    font-weight: bold;
+    text-indent: 0em;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .heading_3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
 }
 
 /* 本文内画像 */
-.image_in_main_text{
-  padding: 20px 0px 20px 70px;
-  width: 80%;
+@media screen and (min-width: 400px) {
+  .image_in_main_text{
+    padding: 20px 0px 20px 70px;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .image_in_main_text{
+    padding: 20px 10%;
+    width: 80%;
+  }
 }

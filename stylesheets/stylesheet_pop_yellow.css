@@ -12,10 +12,11 @@ code {
   padding: 0.1em 0.4em;
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
   border-radius: 4px;
+  word-break: break-word;
 }
 
 /*----------*/
-/* 共通CSS*/
+/* 共通CSS  */
 /*----------*/
 
 /* body全体 */
@@ -24,15 +25,26 @@ body {
   margin: 0px;
   font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO", "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro";
 }
-
+ 
 /* ヘッダー*/
-header {
-  text-align: center;
-  background-color: #FFE5B9;
-  color: #FFFFFF;
-  padding: 100px 50px;
-  font-size: 20px;
-  margin: 50px 0 0 0;
+@media screen and (max-width: 400px) {
+  header {
+    text-align: center;
+    background-color: #FFE5B9;
+    color: #FFFFFF;
+    padding: 80px 10%;
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 400px) {
+  header {
+    text-align: center;
+    background-color: #FFE5B9;
+    color: #FFFFFF;
+    padding: 100px 50px;
+    font-size: 20px;
+    margin: 50px 0 0 0;
+  }
 }
 
 /* Homeリンク */
@@ -57,7 +69,7 @@ header {
 }
 .here_url {
   display: inline-block;
-  margin: 0 0 0 30px;
+  margin: 0 0 0 5%;
 }
 
 /* ヘッダー下 */
@@ -75,10 +87,20 @@ header {
 }
 
 /* ページ説明 */
-#page_explanation {
-  background-color: #EFF8FF;
-  padding: 30px;
-  border-radius: 30px;
+@media screen and (min-width: 400px) {
+  #page_explanation {
+    background-color: #EFF8FF;
+    padding: 30px;
+    border-radius: 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #page_explanation {
+    background-color: #EFF8FF;
+    padding: 30px;
+    border-radius: 30px;
+    font-size: 13px;
+  }
 }
 
 /* Tips一覧 */
@@ -123,7 +145,7 @@ header {
     margin: 0 0 80px 0;
     order: 2;
     border-radius: 30px;
-  }
+    }
 }
 @media screen and (min-width: 1192px) {
   #menu_bar {
@@ -158,7 +180,7 @@ header {
   box-shadow: 0 20px 0 #ffab73;
 }
 
-/* 検索エリア全体 */
+/* 検索 */
 @media screen and (max-width: 1192px) {
   .search_bar{
     display: block;
@@ -226,7 +248,7 @@ header {
   }
 }
 .design_bar {
-  width: 62%;
+  width: 61%;
   padding: 8px 40px 8px 15px;
   border: 2px solid #C9CBFF;
   background-color: #FFFFFF;
@@ -261,16 +283,32 @@ header {
 }
 
 /* 見出し１ */
-.heading_1 {
-  color: #FFFFFF;
-  padding: 1em;
-  display: inline-block;
-  line-height: 1.3;
-  background: #C9CBFF;
-  vertical-align: middle;
-  border-radius: 25px 0px 0px 25px;
-  font-size: 25px;
+@media screen and (min-width: 400px) {
+  .heading_1 {
+    color: #FFFFFF;
+    padding: 1em;
+    display: inline-block;
+    line-height: 1.3em;
+    background: #C9CBFF;
+    vertical-align: middle;
+    border-radius: 25px 0px 0px 25px;
+    font-size: 25px;
+  }
 }
+@media screen and (max-width: 400px) {
+  .heading_1 {
+    color: #FFFFFF;
+    padding: 1em;
+    display: inline-block;
+    line-height: 1.3em;
+    background: #C9CBFF;
+    vertical-align: middle;
+    border-radius: 25px 0px 0px 25px;
+    font-size: 20px;
+    word-break: break-word;
+  }
+}
+
 .subtitle {
   color: #FFFFFF;
 }
@@ -285,13 +323,25 @@ header {
 }
 
 /* 見出し２ */
-.heading_2 {
-  font-size: 20px;
-  padding: 0 30px 10px 20px;
-  line-height: 50px;
-  font-weight: bold;
-  text-indent: 1em;
-  margin: 0;
+@media screen and (min-width: 400px) {
+  .heading_2 {
+    font-size: 20px;
+    padding: 0 30px 10px 20px;
+    line-height: 50px;
+    font-weight: bold;
+    text-indent: 1em;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .heading_2 {
+    font-size: 18px;
+    padding: 0 30px 10px 20px;
+    line-height: 35px;
+    font-weight: bold;
+    text-indent: 1em;
+    margin: 0;
+  }
 }
 .heading_2::before {
   content: '';
@@ -308,19 +358,39 @@ header {
 .textarea {
   padding: 30px 0;
 }
-.lang_div {
-  padding: 30px;
-  background-color: #EFF8FF;
-  margin: 0 0 30px 0;
-  border-radius: 30px;
+@media screen and (min-width: 400px) {
+  .lang_div {
+    padding: 30px;
+    background-color: #EFF8FF;
+    margin: 0 0 30px 0;
+    border-radius: 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .lang_div {
+    padding: 20px 5%;
+    background-color: #EFF8FF;
+    margin: 0 0 30px 0;
+    border-radius: 30px;
+  }
 }
 
 /* Tipsリンク部 */
-.tips_contents {
-  display: block;
-  font-size: 20px;
-  padding: 20px 0 0 50px;
-  width: fit-content;
+@media screen and (min-width: 400px) {
+  .tips_contents {
+    display: block;
+    font-size: 20px;
+    padding: 20px 0 0 50px;
+    width: fit-content;
+  }
+}
+@media screen and (max-width: 400px) {
+  .tips_contents {
+    display: block;
+    font-size: 18px;
+    padding: 20px 10% 10px 10%;
+    width: fit-content;
+  }
 }
 
 
@@ -346,23 +416,23 @@ header {
   font-weight: bold;
   text-align: center;
 }
-#tips_title::before,
-#tips_title::after {
+#tips_title::before {
   content: '';
   position: absolute;
-  top: 100%;
   border-style: solid;
   border-color: transparent;
-}
-#tips_title::before {
+  top: calc(100% + 10px);
   left: -10px;
-  top: 240px;
   border-width: 0 15px 15px 0;
   border-right-color: #96793A;
 }
 #tips_title::after {
   content: '';
-  top: 240px;
+  position: absolute;
+  border-style: solid;
+  border-color: transparent;
+  content: '';
+  top: calc(100% + 10px);
   right: -10px;
   border: none;
   border-width: 15px 15px 0 0;
@@ -374,7 +444,7 @@ header {
 .main_text {
   display: block;
   font-size: 15px;
-  padding: 0 70px;
+  padding: 0 10%;
   margin: 0;
   line-height: 30px;
 }
@@ -382,6 +452,7 @@ header {
 /* 本文中のリンク */
 .link_in_contents {
   color: blue;
+  word-break: break-word;
 }
 
 /* コードブロック */
@@ -396,17 +467,37 @@ header {
 }
 
 /* 見出し３ */
-.heading_3 {
-  font-size: 16px;
-  padding: 0 30px;
-  line-height: 50px;
-  font-weight: bold;
-  text-indent: 0em;
-  margin: 0;
+@media screen and (min-width: 400px) {
+  .heading_3 {
+    font-size: 16px;
+    padding: 0 5%;
+    line-height: 30px;
+    font-weight: bold;
+    text-indent: 0em;
+    margin: 0 0 10px 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .heading_3 {
+    font-size: 16px;
+    padding: 15px 5% 5px 5%;
+    line-height: 30px;
+    font-weight: bold;
+    margin: 0;
+  }
 }
 
+
 /* 本文内画像 */
-.image_in_main_text{
-  padding: 20px 0px 20px 70px;
-  width: 80%;
+@media screen and (min-width: 400px) {
+  .image_in_main_text{
+    padding: 20px 0px 20px 70px;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .image_in_main_text{
+    padding: 20px 10% 20px 10%;
+    width: 80%;
+  }
 }
