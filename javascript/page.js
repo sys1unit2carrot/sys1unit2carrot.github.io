@@ -55,7 +55,7 @@ window.onload = function(){
   }
 
   // もくじ
-  var elements = document.querySelectorAll(".heading_1_text");
+  var elements = document.querySelectorAll(".heading_1");
   if (elements && elements.length) {
     let contents = '';
     elements.forEach((elements, i) => {
