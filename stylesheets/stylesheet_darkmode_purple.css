@@ -368,10 +368,12 @@ body {
   background-color: #364549;
   margin: 20px;
   padding: 20px 30px;
+  overflow-x: auto;
 }
 .code {
   color: #e3e3e3;
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  white-space: nowrap;
 }
 
 /* 見出し３ */

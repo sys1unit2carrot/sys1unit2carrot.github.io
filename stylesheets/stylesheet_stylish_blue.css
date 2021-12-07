@@ -464,6 +464,7 @@ body {
     background-color: #364549;
     margin: 15px 60px;
     padding: 20px 30px;
+    overflow-x: auto;
   }
 }
 @media screen and (max-width: 400px) {
@@ -471,12 +472,13 @@ body {
     background-color: #364549;
     margin: 5%;
     padding: 5%;
-    overflow-x: hidden;
+    overflow-x: auto;
   }
 }
 .code {
   color: #e3e3e3;
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  white-space: nowrap;
 }
   
 /* 見出し３ */
