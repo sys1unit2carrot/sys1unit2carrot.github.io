@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset='utf-8'>
+    <title>うにてぃっぷす - CSSでレスポンシブ対応</title>
+    <link id="css_design" rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
+    <link rel="icon" href="../../pictures/sushi_uni.png">
+    <script src="../../javascript/page.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="System1 Unit2のメンバーが使うTipsサイトです。作業に詰まったとき、備忘録を残したいときに覗いてください。">
+  </head>
+
+  <body>
+    <!--boby全体-->
+    <div class="container">
+      <!--ヘッダー-->
+      <header class="header">
+        <h1 class="header__title">うにてぃっぷす</h1>
+      </header>
+
+      <!--Homeリンク-->
+      <div class="return_bar">
+        <a href="../index.html" class="home_url">Home</a>
+      </div>
+  
+      <!--ヘッダー下全体-->
+      <div id="body">
+        <!--左部(本文)-->
+        <div id="main">
+          <!--Tips一覧部-->
+          <div id="tips_detail">
+            <!--Tipsタイトル-->
+            <div id="tips_title">CSSでレスポンシブ対応</div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_1" class="heading_1">レスポンシブ対応とは</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">レスポンシブデザインとは、スマートフォン・タブレット・PCなど、異なる画面サイズの幅を基準にしてWebサイト表示を柔軟に調整し、見やすくすることです。</p>
+                  <p class="main_text">スマホで表示する用でHTMLを別途用意せずとも、メディアクエリを使用すれば画面の幅ごとにCSSを設定することが可能です。</p>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_2" class="heading_1">メディアクエリとは</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">メディアクエリとは、ブラウザの表示領域やデバイスの画面サイズなどの条件によって適応させるスタイルを切り替えられる機能のことです。</p>
+                  <p class="main_text">例えば、「画面の横幅が600px以下の時はこんなデザイン！」という指定が可能になります。</p>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_3" class="heading_1">使い方①　CSS切り替え</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">HTMLソースの<code>headタグ</code>内で画面サイズを指定し、CSSシートを切り替える方法です。</p>
+                  <div class="code_frame">
+                    <p class="code"><link rel="stylesheet" href="xxx.css" media="screen and (max-width: 480px)"></p>
+                    <p class="code"><link rel="stylesheet" href="yyy.css" media="screen and (min-width: 768px)"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_4" class="heading_1">使い方②　CSSに記述</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">CSS内で画面サイズの指定とプロパティの指定をしてデザインを切り替える方法です。「一部のデザインだけ切り替えたい！」というときに便利です。</p>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">Max Width</p>
+                  <p class="main_text">画面サイズの横幅が指定したサイズより小さい場合に、スタイルが適用されます。</p>
+                  <div class="code_frame">
+                    <p class="code">/* 画面サイズの横幅が 768px より小さい場合に適用 */</p>
+                    <p class="code">@media screen and (max-width: 768px) {</p>
+                    <p class="code">　.sample {</p>
+                    <p class="code">　　font-size :10px;</p>
+                    <p class="code">　}</p>
+                    <p class="code">}</p>
+                  </div>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">Min Width</p>
+                  <p class="main_text">画面サイズの横幅が指定したサイズより大きい場合に、スタイルが適用されます。</p>
+                  <div class="code_frame">
+                    <p class="code">/* 画面サイズの横幅が 768px より大きい場合に適用 */</p>
+                    <p class="code">@media screen and (min-width: 768px) {</p>
+                    <p class="code">　.sample {</p>
+                    <p class="code">　　font-size :10px;</p>
+                    <p class="code">　}</p>
+                    <p class="code">}</p>
+                  </div>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">複数のWidth指定</p>
+                  <p class="main_text">画面サイズの横幅が○○以上～○○以下という場合にスタイルが適用されます。</p>
+                  <div class="code_frame">
+                    <p class="code">/* 画面サイズの横幅が 480px より大きく、768より小さい場合に適用 */</p>
+                    <p class="code">@media screen and (min-width: 600px) and (max-width: 768px) {</p>
+                    <p class="code">　.sample {</p>
+                    <p class="code">　　font-size :10px;</p>
+                    <p class="code">　}</p>
+                    <p class="code">}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--右部(メニューバー)-->
+        <div id="menu_bar">
+          <!--検索ボックス-->
+          <div class="search_bar">
+            <label for="tag" class="menu_title">検索</label>
+            <div class="search_area">
+              <label for="tag"></label>
+              <input type=text value="" name="tag" id=tag class="search_box">
+              <input type=button id=search class="search_btn" value=検索>
+            </div>
+          </div>
+          <!--もくじ-->
+          <div class="table_of_contents">
+            <p class="menu_title">もくじ</p>
+            <div id="table_of_contents_index"></div>
+          </div>
+          <!--デザイン変更ボタン-->
+          <div class="chenge_design_area">
+            <div class="menu_title">デザイン変更</div>
+            <div class="select_area">
+              <select id="select_design" class="design_bar">
+                <option value="simple_green">シンプル　緑</option>
+                <option value="simple_darkmode_purple">シンプル　ダークモード</option>
+                <option value="pop_blue">ポップ　青</option>
+                <option value="pop_pink">ポップ　ピンク</option>
+                <option value="pop_yellow">ポップ　黄</option>
+                <option value="pop_accessibility">ポップ　アクセシビリティ</option>
+                <option value="stylish_blue">スタイリッシュ　青</option>
+                <option value="stylish_accessibility">スタイリッシュ　アクセシビリティ</option>
+              </select>
+              <input id="chenge_design_btn" class="design_btn" type="button" value="変更" onclick="chenge_css_btn();">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

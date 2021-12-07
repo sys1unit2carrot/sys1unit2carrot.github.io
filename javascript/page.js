@@ -63,4 +63,13 @@ window.onload = function(){
     })
     document.getElementById("table_of_contents_index").innerHTML += `${contents}`;
   };
+
+  // code表示変換
+  var code = document.getElementsByClassName("code");
+  if (code != null) {
+    for (var i = 0; i < code.length; i++) {
+      var code_sentence =code[i];
+      code_sentence.innerHTML = code_sentence.innerHTML.replace(/</g,'&lt;').replace(/>/,'&gt;');
+    };
+  };
 };
