@@ -400,13 +400,16 @@ body {
 /* 本文内画像 */
 @media screen and (min-width: 400px) {
   .image_in_main_text{
-    padding: 20px 0px 20px 70px;
+    display: block;
+    padding: 20px 0px;
+    margin: auto;
     width: 80%;
   }
 }
 @media screen and (max-width: 400px) {
   .image_in_main_text{
-    padding: 20px 10% 20px 10%;
+    display: block;
+    padding: 20px 10%;
     width: 80%;
   }
 }
