@@ -271,46 +271,27 @@ body {
   }
 }
 .design_bar {
-  width: 61%;
-  padding: 5px 30px 5px 12px;
+  width: 90%;
+  padding: 5px 20% 5px 12px;
+  margin: 0 5%;
   border: 2px solid #C9CBFF;
   background-color: #FFFFFF;
   appearance: none;
 }
-@media screen and (max-width: 1192px) {
-  .select_area {
-    margin: 20px 10px 0 15px;
-  }
+.select_area {
+    margin: 20px 0 0 0;
 }
-@media screen and (min-width: 1192px) {
-  .select_area {
-    margin: 20px 10px 0 0;
-  }
-}
-
-.select_area::before {
+.select_area::after {
   content: '';
   position: relative;
-  top: 13px;
-  left: 56%;
-  width: 0;
-  height: 0;
-  padding: 0;
+  top: 14px;
+  right: 17%;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #C9CBFF;
   pointer-events: none;
 }
-.design_btn {
-  padding: 3px 10px;
-  color: #FFFFFF;
-  background: #C9CBFF;
-  border: 2px solid #C9CBFF;
-  height: 30px;
-  width: 30%;
-  text-align: center;
-}
-  
+
 /* 見出し１ */
 @media screen and (min-width: 400px) {
   .heading_1 {

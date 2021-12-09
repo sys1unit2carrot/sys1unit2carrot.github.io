@@ -251,38 +251,26 @@ body {
   }
 }
 .design_bar {
-  width: 61%;
-  padding: 8px 40px 8px 15px;
+  width: 90%;
+  padding: 8px 20% 8px 20px;
+  margin: 0 5%;
   border: 2px solid #009688;
   background-color: #FFFFFF;
   border-radius: 10px;
   appearance: none;
 }
 .select_area {
-  margin: 20px 10px 0 12px;
+  margin: 20px 0 0 0;
 }
-.select_area::before {
+.select_area::after {
+  content: '';
   position: relative;
   top: 13px;
-  left: 56%;
-  width: 0;
-  height: 0;
-  padding: 0;
-  content: '';
+  right: 17%;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #009688;
   pointer-events: none;
-}
-.design_btn {
-  padding: 5px 10px;
-  color: #000;
-  background: #52C7B8;
-  border: 2px solid #009688;
-  height: 36px;
-  width: 30%;
-  border-radius: 10px;
-  text-align: center;
 }
 
 /* 見出し１ */
