@@ -92,6 +92,8 @@ body {
     background-color: #F5F5F5;
     padding: 30px;
     border-radius: 30px;
+    line-height: 1.5em;
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -100,6 +102,7 @@ body {
     padding: 30px;
     border-radius: 30px;
     font-size: 13px;
+    line-height: 1.3em;
   }
 }
 

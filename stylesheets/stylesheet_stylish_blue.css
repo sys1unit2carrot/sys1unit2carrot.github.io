@@ -120,6 +120,7 @@ body {
     border-radius: 30px;
     text-align: center;
     font-size: 13px;
+    line-height: 1.5em;
   }
 }
 @media screen and (min-width: 400px) {
@@ -127,9 +128,11 @@ body {
     padding: 30px;
     border-radius: 30px;
     text-align: center;
+    font-size: 16px;
+    line-height: 1.5em;
   }
 }
-  
+
 /* Tips一覧 */
 @media screen and (max-width: 1192px) {
   #tips_list{
