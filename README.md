@@ -1,7 +1,7 @@
 # sys1unit2carrot.github.io
 ## うにてぃっぷすURL
 うにてぃっぷす：[https://sys1unit2carrot.github.io/view/index.html](https://sys1unit2carrot.github.io/view/index.html)  
-サンプルページ：[https://sys1unit2carrot.github.io/view/sample/sample.html](https://sys1unit2carrot.github.io/view/sample/sample.html)
+サンプルページ：[https://sys1unit2carrot.github.io/view/sample/sample.html](https://sys1unit2carrot.github.io/view/sample/sample.html)  
 <br><br>
 
 ## 概要
@@ -62,6 +62,22 @@
 ## 記載方法
   本文を編集する際に必要になるクラスの使用方法です。  
   既に実装されている記事のHTMLも参考にするとさらに分かりやすいかと思います。  
+
+### 本文
+  本文を記載する場合は `main_text` クラスを使用してください。  
+  ~~~HTML
+    【 例 】
+    <p class="main_text">本文はここに記載してください。</p>
+  ~~~
+
+### 文字の装飾
+  - 太字
+  文字を太字にする場合は`<b>タグ`を使用してください。  
+  ~~~HTML
+    【 例 】
+    <p class="main_text">太字にする場合は<b>bタグ</b>を使用してください。</p>
+  ~~~
+
 ### 見出し
   - `heading_1`  
   目次に記載される単位の題字です。  
@@ -94,7 +110,7 @@
     【 例 】
     <p class="heading_3">xxxについて</p>
   ~~~
-  
+
 ### 画像
   スクリーンショットなどの画像を差し込みたい場合は以下の手順で記載してください。
   1. 圧縮してjpg形式にする
@@ -108,7 +124,6 @@
   【 例 】
   <img src="../../pictures/screenshots/[画像名].jpg" alt="[画像内容]" title="[画像名]" class="image_in_main_text">
   ~~~
-
 
 ### コード
   コードを記載する場合は`<code>`を使用すると便利です。  
