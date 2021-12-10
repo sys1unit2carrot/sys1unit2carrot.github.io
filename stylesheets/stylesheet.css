@@ -187,13 +187,12 @@ body {
 /* もくじ */
 @media screen and (max-width: 996px) {
   .table_of_contents {
-    margin: 40px 0;
-    padding: 0 30px;
+    margin: 30px;
   }
 }
 @media screen and (min-width: 996px) {
   .table_of_contents {
-    margin: 40px 0;
+    margin: 0 0 40px 0;
   }
 }
 .index_lang{
@@ -210,7 +209,7 @@ body {
 /* デザイン変更 */
 @media screen and (max-width: 996px) {
   .chenge_design_area {
-    padding: 0 30px 30px 30px;
+    margin: 30px;
   }
 }
 .design_bar {

@@ -238,13 +238,12 @@ body {
 /* もくじ */
 @media screen and (max-width: 1192px) {
   .table_of_contents {
-    margin: 40px 0;
-    padding: 0 30px;
+    margin: 30px;
   }
 }
 @media screen and (min-width: 1192px) {
   .table_of_contents {
-    margin: 35px 0;
+    margin: 0 0 35px 0;
   }
 }
 .index_lang{
@@ -263,7 +262,7 @@ body {
 /* セレクトボックス */
 @media screen and (max-width: 1192px) {
   .chenge_design_area {
-    padding: 0 30px 40px 30px;
+    margin: 30px;
   }
 }
 .design_bar {
