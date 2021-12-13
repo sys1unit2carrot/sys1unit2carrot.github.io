@@ -63,10 +63,10 @@
                   <p class="heading_3">4. Jekyll導入</p>
                   <p class="main_text"><code>gem install jekyll</code>を実行</p>
                   <p class="main_text"><code>jekyll -v</code>で導入されたバージョンを確認</p>
-                  <div class="code_frame">
-                    <p class="code">jekyll -v</p>
-                    <p class="code">jekyll 4.2.1</p>
-                  </div>
+<pre>
+jekyll -v
+jekyll 4.2.1
+</pre>
                   <br>
                   <p class="heading_3">5. jekyllでプロジェクトを立ち上げる</p>
                   <p class="main_text"><code>jekyll new [Githubのリポジトリ名]</code>を実行</p>
@@ -92,16 +92,12 @@
                 <div class="lang_div">
                   <p class="heading_2">・オプション追加して<code>jekyll s</code>を実行</p>
                   <p class="main_text"><a href="https://worktoolsmith.com/jekyll-vagrant-address/" target="_blank" rel="noopener" class="link_in_contents">VagrantでJekyllを動かしてもlocalhostで接続できない</a>のサイトを参考に以下のコマンドを実行したが状況は変わらず。</p>
-                  <div class="code_frame">
-                    <p class="code">bundle exec jekyll s --host 0.0.0.0</p>
-                  </div>
+                  <pre>bundle exec jekyll s --host 0.0.0.0</pre>
                 </div>
                 <div class="lang_div">
                   <p class="heading_2">・ポート番号を変更</p>
                   <p class="main_text">以下のコマンドを実行してポート番号を変更したが変わらず。</p>
-                  <div class="code_frame">
-                    <p class="code">bundle exec jekyll s -P 5000</p>
-                  </div>
+                  <pre>bundle exec jekyll s -P 5000</pre>
                 </div>
                 <div class="lang_div">
                   <p class="heading_2">・URLの末尾にhtml名を記載</p>

@@ -53,38 +53,38 @@
                 <div class="lang_div">
                   <p class="heading_2">vw</p>
                   <p class="main_text">相対指定。ビューポートの幅の%で決まる。</p>
-                  <div class="code_frame">
-                    <p class="code">.a {</p>
-                    <p class="code">　font-size: 3vw;</p>
-                    <p class="code">}</p>
-                  </div>
+<pre>
+.a {
+  font-size: 3vw;
+}
+</pre>
                 </div>
                 <div class="lang_div">
                   <p class="heading_2">vh</p>
                   <p class="main_text">相対指定。ビューポートの高さの%で決まる。</p>
-                  <div class="code_frame">
-                    <p class="code">.a {</p>
-                    <p class="code">　font-size: 3vh;</p>
-                    <p class="code">}</p>
-                  </div>
+<pre>
+.a {
+  font-size: 3vh;
+}
+</pre>
                 </div>
                 <div class="lang_div">
                   <p class="heading_2">vmin</p>
                   <p class="main_text">相対指定。ビューポートの「幅か高さの短い方」の%で決まる。</p>
-                  <div class="code_frame">
-                    <p class="code">.a {</p>
-                    <p class="code">　font-size: 3vmin;</p>
-                    <p class="code">}</p>
-                  </div>
+<pre>
+.a {
+  font-size: 3vmin;
+}
+</pre>
                 </div>
                 <div class="lang_div">
                   <p class="heading_2">vmax</p>
                   <p class="main_text">相対指定。ビューポートの「幅か高さの長い方」の%で決まる。</p>
-                  <div class="code_frame">
-                    <p class="code">.a {</p>
-                    <p class="code">　font-size: 3vmax;</p>
-                    <p class="code">}</p>
-                  </div>
+<pre>
+.a {
+  font-size: 3vmax;
+}
+</pre>
                 </div>
               </div>
             </div>
@@ -97,13 +97,12 @@
               <div class="textarea">
                 <div class="lang_div">
                   <p class="main_text">CSSの関数で、最小値・基準値・最大値を設定して可変させることができます。</p>
-                  <div class="code_frame">
-                    <p class="code">【書き方】</p>
-                    <p class="code">font-size: clamp(最小値, 基準値, 最大値);</p>
-                    <br>
-                    <p class="code">【例】</p>
-                    <p class="code">font-size: clamp(15px, 1vw, 30px);</p>
-                  </div>
+<pre>
+【書き方】
+font-size: clamp(最小値, 基準値, 最大値);
+【例】
+font-size: clamp(15px, 1vw, 30px);
+</pre>
                   <p class="main_text">この例だと、ウィンドウ幅に対して1vwの大きさを基本としウィンドウ幅を縮小した場合、15px以下になることはなく、逆にウィンドウ幅を拡大した場合に30px以上になりません。つまり15～30pxの間で可変をしてくれるようになります。</p>
                 </div>
               </div>

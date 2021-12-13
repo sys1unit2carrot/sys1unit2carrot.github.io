@@ -70,13 +70,13 @@
                 <div class="lang_div">
                   <p class="heading_2">1. 個別設定</p>
                   <p class="main_text">marginの上、paddingの左など、余白の種類(プロパティ)と方向をあらかじめ指定する方法です。「marginの下だけ設定したい！」「paddingの左だけ設定したい！」という場合にオススメです。</p>
-                  <div class="code_frame">
-                    <p class="code">/* 個別設定の例 */</p>
-                    <p class="code">.a {</p>
-                    <p class="code">　margin-top: 30px;</p>
-                    <p class="code">　padding-left: 10px;</p>
-                    <p class="code">}</p>
-                  </div>
+<pre>
+/* 個別設定の例 */
+.a {
+  margin-top: 30px;
+  padding-left: 10px;
+}
+</pre>
                   <p class="main_text">↓　反映させると……</p>
                   <img src="../../pictures/screenshots/margin_padding_3.jpg" alt="個別指定の例" title="margin_padding_3" class="image_in_main_text">
                   <p class="main_text">marginがオレンジ、paddingが緑、表示領域が青で表示されています。<br>marginの上とpaddingの左に余白ができました。</p>
@@ -84,13 +84,13 @@
                 <div class="lang_div">
                     <p class="heading_2">2. 一括設定</p>
                     <p class="main_text">上下左右の値をまとめて指定する方法です。<br>実装後の修正も楽なので、余白を複数設定する場合はこちらの方法がオススメです。値は基本的に「上・右・下・左」の順で指定しますが、「上下左右」「上下・左右」「上・左右・下」で設定することもできます。</p>
-                    <div class="code_frame">
-                      <p class="code">/* 一括設定の例 */</p>
-                      <p class="code">.a {</p>
-                      <p class="code">　margin: 10px 5px;</p>
-                      <p class="code">　padding: 5px 10px 30px 20px;</p>
-                      <p class="code">}</p>
-                    </div>
+<pre>
+/* 一括設定の例 */
+.a {
+  margin: 10px 5px;
+  padding: 5px 10px 30px 20px;
+}
+</pre>
                     <p class="main_text">↓　反映させると……</p>
                     <img src="../../pictures/screenshots/margin_padding_4.jpg" alt="一括指定の例" title="margin_padding_4" class="image_in_main_text" style="max-width: 300px;">
                     <p class="main_text">marginがオレンジ、paddingが緑、表示領域が青で表示されています。<br>marginとpaddingの全方向に余白ができました。</p>

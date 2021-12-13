@@ -14,6 +14,16 @@ code {
   border-radius: 4px;
   word-break: break-word;
 }
+pre {
+  color: #e3e3e3;
+  background-color: #364549;
+  margin: 20px;
+  padding: 40px 30px;
+  font-size: 16px;
+  line-height: 30px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+}
 
 /*----------*/
 /* 共通CSS  */
@@ -443,19 +453,6 @@ body {
 .link_in_contents {
   color: blue;
   word-break: break-word;
-}
-
-/* コードブロック */
-.code_frame {
-  background-color: #364549;
-  margin: 20px;
-  padding: 20px 30px;
-  overflow-x: auto;
-}
-.code {
-  color: #e3e3e3;
-  font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
-  white-space: nowrap;
 }
 
 /* 見出し３ */

@@ -66,10 +66,11 @@
               <div class="textarea">
                 <div class="lang_div">
                   <p class="main_text">HTMLソースの<code>headタグ</code>内で画面サイズを指定し、CSSシートを切り替える方法です。</p>
-                  <div class="code_frame">
-                    <p class="code"><link rel="stylesheet" href="xxx.css" media="screen and (max-width: 480px)"></p>
-                    <p class="code"><link rel="stylesheet" href="yyy.css" media="screen and (min-width: 768px)"></p>
-                  </div>
+<pre>
+【 例 】
+<link rel="stylesheet" href="xxx.css" media="screen and (max-width: 480px)">
+<link rel="stylesheet" href="yyy.css" media="screen and (min-width: 768px)">
+</pre>
                 </div>
               </div>
             </div>
@@ -86,38 +87,38 @@
                 <div class="lang_div">
                   <p class="heading_2">Max Width</p>
                   <p class="main_text">画面サイズの横幅が指定したサイズより小さい場合に、スタイルが適用されます。</p>
-                  <div class="code_frame">
-                    <p class="code">/* 画面サイズの横幅が 768px より小さい場合に適用 */</p>
-                    <p class="code">@media screen and (max-width: 768px) {</p>
-                    <p class="code">　.sample {</p>
-                    <p class="code">　　font-size :10px;</p>
-                    <p class="code">　}</p>
-                    <p class="code">}</p>
-                  </div>
+<pre>
+/* 画面サイズの横幅が 768px より小さい場合に適用 */
+@media screen and (max-width: 768px) {
+  .sample {
+    font-size :10px;
+  }
+}
+</pre>
                 </div>
                 <div class="lang_div">
                   <p class="heading_2">Min Width</p>
                   <p class="main_text">画面サイズの横幅が指定したサイズより大きい場合に、スタイルが適用されます。</p>
-                  <div class="code_frame">
-                    <p class="code">/* 画面サイズの横幅が 768px より大きい場合に適用 */</p>
-                    <p class="code">@media screen and (min-width: 768px) {</p>
-                    <p class="code">　.sample {</p>
-                    <p class="code">　　font-size :10px;</p>
-                    <p class="code">　}</p>
-                    <p class="code">}</p>
-                  </div>
+<pre>
+/* 画面サイズの横幅が 768px より大きい場合に適用 */
+@media screen and (min-width: 768px) {
+  .sample {
+    font-size :10px;
+  }
+}
+</pre>
                 </div>
                 <div class="lang_div">
                   <p class="heading_2">複数のWidth指定</p>
                   <p class="main_text">画面サイズの横幅が○○以上～○○以下という場合にスタイルが適用されます。</p>
-                  <div class="code_frame">
-                    <p class="code">/* 画面サイズの横幅が 480px より大きく、768より小さい場合に適用 */</p>
-                    <p class="code">@media screen and (min-width: 600px) and (max-width: 768px) {</p>
-                    <p class="code">　.sample {</p>
-                    <p class="code">　　font-size :10px;</p>
-                    <p class="code">　}</p>
-                    <p class="code">}</p>
-                  </div>
+<pre>
+/* 画面サイズの横幅が 480px より大きく、768より小さい場合に適用 */
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .sample {
+    font-size :10px;
+  }
+}
+</pre>
                 </div>
               </div>
             </div>
