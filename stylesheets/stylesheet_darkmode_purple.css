@@ -219,7 +219,7 @@ body {
 
 /* デザイン変更 */
 @media screen and (max-width: 996px) {
-  .chenge_design_area {
+  .change_design_area {
     margin: 30px;
   }
 }

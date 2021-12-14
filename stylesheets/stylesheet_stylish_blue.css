@@ -302,7 +302,7 @@ body {
   
 /* セレクトボックス */
 @media screen and (max-width: 1192px) {
-  .chenge_design_area {
+  .change_design_area {
     margin: 30px;
   }
 }
