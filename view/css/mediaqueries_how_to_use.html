@@ -40,7 +40,7 @@
               <div class="textarea">
                 <div class="lang_div">
                   <p class="main_text">レスポンシブデザインとは、スマートフォン・タブレット・PCなど、異なる画面サイズの幅を基準にしてWebサイト表示を柔軟に調整し、見やすくすることです。</p>
-                  <p class="main_text">スマホで表示する用でHTMLを別途用意せずとも、メディアクエリを使用すれば画面の幅ごとにCSSを設定することが可能です。</p>
+                  <p class="main_text">スマホ表示用としてHTMLを別途用意せずとも、メディアクエリを使用すれば画面の幅ごとにCSSを設定することが可能です。</p>
                 </div>
               </div>
             </div>
@@ -68,8 +68,10 @@
                   <p class="main_text">HTMLソースの<code>headタグ</code>内で画面サイズを指定し、CSSシートを切り替える方法です。</p>
 <pre>
 【 例 】
-<link rel="stylesheet" href="xxx.css" media="screen and (max-width: 480px)">
-<link rel="stylesheet" href="yyy.css" media="screen and (min-width: 768px)">
+&lt;head&gt;
+  <link rel="stylesheet" href="xxx.css" media="screen and (max-width: 480px)">
+  <link rel="stylesheet" href="yyy.css" media="screen and (min-width: 768px)">
+&lt;/head&gt;
 </pre>
                 </div>
               </div>
@@ -113,7 +115,7 @@
                   <p class="main_text">画面サイズの横幅が○○以上～○○以下という場合にスタイルが適用されます。</p>
 <pre>
 /* 画面サイズの横幅が 480px より大きく、768より小さい場合に適用 */
-@media screen and (min-width: 600px) and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
   .sample {
     font-size :10px;
   }
