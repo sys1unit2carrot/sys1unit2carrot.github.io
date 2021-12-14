@@ -488,15 +488,16 @@ body {
 @media screen and (min-width: 400px) {
   .image_in_main_text{
     display: block;
-    padding: 20px 0px;
-    margin: auto;
+    margin: 20px auto 0px;
     width: 80%;
+    border: 1px solid #000;
   }
 }
 @media screen and (max-width: 400px) {
   .image_in_main_text{
     display: block;
-    padding: 20px 10%;
+    margin: 20px auto 10px;
     width: 80%;
+    border: 1px solid #000;
   }
 }

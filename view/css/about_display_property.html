@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset='utf-8'>
+    <title>うにてぃっぷす - displayプロパティ</title>
+    <link id="css_design" rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
+    <link rel="icon" href="../../pictures/sushi_uni.png">
+    <script src="../../javascript/page.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="System1 Unit2のメンバーが使うTipsサイトです。作業に詰まったとき、備忘録を残したいときに覗いてください。">
+  </head>
+
+  <body>
+    <!--boby全体-->
+    <div class="container">
+      <!--ヘッダー-->
+      <header class="header">
+        <h1 class="header__title">うにてぃっぷす</h1>
+      </header>
+
+      <!--Homeリンク-->
+      <div class="return_bar">
+        <a href="../index.html" class="home_url">Home</a>
+      </div>
+  
+      <!--ヘッダー下全体-->
+      <div id="body">
+        <!--左部(本文)-->
+        <div id="main">
+          <!--Tips一覧部-->
+          <div id="tips_detail">
+            <!--Tipsタイトル-->
+            <div id="tips_title">displayプロパティ</div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_1" class="heading_1">displayプロパティとは</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text"><code>display</code>はCSSで使用されるプロパティの1つで、要素の表示形式を決めるプロパティです。</p>
+                  <img src="../../pictures/screenshots/about_display_property_1.jpg" alt="プロパティの説明" title="about_display_property_1" class="image_in_main_text">
+                  <p class="main_text">設定できる値はいくつかあります。その中でも一番ややこしいのが <code>block</code> <code>inline</code> <code>inline-block</code> の3つです。一部のHTMLタグはデフォルトで初期値が決まっているものがあります。</p>
+                  <img src="../../pictures/screenshots/about_display_property_2.jpg" alt="値の種類" title="about_display_property_2" class="image_in_main_text">
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_2" class="heading_1">display: block</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text"><code>display: block</code>はdivタグ・pタグ・h1～h6の見出しタグなどがデフォルトで設定されています。</p>
+                </div>
+                <div class="lang_div">
+                    <p class="heading_2">特徴①　要素は縦に並ぶ</p>
+                    <p class="main_text">HTMLに<code>display: block</code>が設定された要素を並べると要素の前後に改行が入り縦に並びます。</p>
+<pre>
+【HTML】
+<p class="block1">これはブロック1です</p>
+<p class="block2">これはブロック2です</p>
+
+【CSS】
+.block1 {
+  background: orange;
+}
+.block2 {
+  background: skyblue;
+}
+</pre>
+                  <img src="../../pictures/screenshots/about_display_property_3.jpg" alt="特徴１イメージ" title="about_display_property_3" class="image_in_main_text">
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴②　幅と高さが指定可能</p>
+                  <p class="main_text"><code>display: block</code>が設定されている要素は幅(<code>width</code>)と高さ(<code>height</code>)を指定できます。</p>
+<pre>
+【HTML】
+<p class="block1">これはブロックです</p>
+
+【CSS】
+.block1 {
+  background: orange;
+  width: 150px;
+  height: 100px;
+}
+</pre>
+                  <img src="../../pictures/screenshots/about_display_property_4.jpg" alt="特徴２イメージ" title="about_display_property_4" class="image_in_main_text" style="max-width: 200px;">
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴③　余白の指定が可能</p>
+                  <p class="main_text"><code>display: block</code>が設定されている要素は<code>padding</code>と<code>margin</code>の設定が可能です。paddingとmarginについては <a href="../css/margin_padding_difference.html" target="_blank" rel="noopener" class="link_in_contents">marginとpaddingのページ</a> を参照してください。</p>
+<pre>
+【HTML】
+<p class="block1">これはブロックなので余白指定が可能です。</p>
+
+【CSS】
+.block1 {
+  background: orange;
+  padding: 20px;
+  margin: 5px;
+}
+</pre>
+                  <img src="../../pictures/screenshots/about_display_property_5.jpg" alt="特徴３イメージ" title="about_display_property_5" class="image_in_main_text">
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴④　text-alignやvertical-alignの指定はできない</p>
+                  <p class="main_text"><code>display: block</code>が設定されている要素は<code>text-align</code>や<code>vertical-align</code>の指定ができません。<br><code>text-align</code>は横方向のテキストの揃え方を指定できるプロパティ、<code>vertical-align</code>は<code>text-align</code>の縦バージョンです。ですので、以下の例では反映されていないことが分かります。</p>
+<pre>
+【HTML】
+<p class="block1">これはブロックなので指定ができません…。</p>
+
+【CSS】
+.block1 {
+  background: orange;
+  width: 50px;
+  text-align: center;
+}
+</pre>
+                  <img src="../../pictures/screenshots/about_display_property_6.jpg" alt="特徴４イメージ" title="about_display_property_6" class="image_in_main_text" style="max-width: 300px;" style="max-width: 200px;">
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_3" class="heading_1">display: inline</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text"><code>display: inline</code>はaタグ・spanタグ・imgタグなどがデフォルトで設定されています。</p>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴①　文中の一部として使う</p>
+                  <p class="main_text"><code>display: inline</code>は、主に文中の一部として用いられます。<br>使用例として、テキストの装飾やリンクなどの要素が多いです。</p>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴②　要素は横に並ぶ</p>
+                  <p class="main_text">HTMLに<code>display: inline</code>が設定された要素を並べると要素の前後に改行が入らず、横に並びます。以下の例のように、デフォルトで<code>inline</code>が設定されているaタグとspanタグは横に並びます。</p>
+<pre>
+【HTML】
+<p>これは<a href="#">aタグ</a>と<span>spanタグ</span>です</p>
+
+【CSS】
+a {
+  background: skyblue; 
+  color:white;
+}
+span {
+  background: orange;
+}
+</pre>
+                  <img src="../../pictures/screenshots/about_display_property_7.jpg" alt="特徴２イメージ" title="about_display_property_7" class="image_in_main_text">
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴③　blockの中で使用する</p>
+                  <p class="main_text">基本的に<code>inline</code>要素は<code>block</code>の要素の中に入ります。逆に<code>inline</code>要素の中に<code>block</code>要素は基本的に入れません。</p>
+                  <img src="../../pictures/screenshots/about_display_property_8.jpg" alt="特徴３イメージ" title="about_display_property_8" class="image_in_main_text">
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴④　幅と高さが指定不可能</p>
+                  <p class="main_text"><code>display: inline</code>が設定されている要素は幅(<code>width</code>)と高さ(<code>height</code>)の指定ができません。inline要素の幅と高さは「要素の中身」に応じて決まるので、自動で決まってしまいます。</p>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴⑤　上下の余白指定が不可能</p>
+                  <p class="main_text"><code>display: inline</code>が設定されている要素は<code>padding</code>と<code>margin</code>の設定が可能ですが、左右の指定のみに限ります。<br><code>padding</code>で上下の指定はできますが、大きくするとデザインが崩れてしまい、前後の行と被ってしまいます。ですので、基本的には<code>inline</code>では左右のみ余白指定ができると思っておけばOKです。</p>
+<pre>
+【HTML】
+<p>これは<span class="example">margin20pxのspanタグ</span>です。</p>
+<p>これは<span class="example2">padding20pxのspanタグ</span>です。</p>
+
+【CSS】
+.example {
+  margin: 20px; 
+  background: skyblue;
+}
+.example2 {
+  padding: 20px; 
+  background: orange;
+}
+</pre>
+                  <img src="../../pictures/screenshots/about_display_property_9.jpg" alt="特徴５イメージ" title="about_display_property_9" class="image_in_main_text">
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴⑥　text-alignの指定が可</p>
+                  <p class="main_text"><code>display: inline</code>が設定されている要素は<code>text-align</code>や<code>vertical-align</code>が指定できます。ただし、<code>text-align</code>の指定をする際には以下の例のように親要素に指定する必要があります。<br>(<code>vertical-align</code>は<code>inline</code>要素に直接指定でOKです)</p>
+<pre>
+【HTML】
+<div id="example">
+  <span>inline</span>
+</div>
+
+【CSS】
+/* 親要素のdivに指定する */
+#example {
+  text-align:center;
+}
+span {
+  background: orange;
+}
+</pre>
+                  <img src="../../pictures/screenshots/about_display_property_10.jpg" alt="特徴６イメージ" title="about_display_property_10" class="image_in_main_text">
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_4" class="heading_1">display: inline-block</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text"><code>display: inline-block</code>は<code>block</code>と<code>inline</code>の間を取ったようなもので、並び方は<code>inline</code>的、要素の中身は<code>block</code>的な性質を持っています。メニューバーなど、ボタンを横並びするときなどに使うと便利です。</p>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴①　改行が入らずに横に並ぶ</p>
+                  <p class="main_text"><code>display: inline-block</code>が設定されている要素は<code>inline</code>要素と同じく、改行が入らずに横に並びます。</p>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴②　幅と高さが指定可能</p>
+                  <p class="main_text"><code>block</code>要素と同じで、幅(<code>width</code>)と高さ(<code>height</code>)の指定が可能です。</p>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴③　余白が指定可能</p>
+                  <p class="main_text"><code>block</code>要素と同じで、<code>padding</code>と<code>margin</code>の指定が可能です。
+                </p>
+                </div>
+                <div class="lang_div">
+                  <p class="heading_2">特徴④　text-alignとvertical-alignの指定可能</p>
+                  <p class="main_text"><code>inline</code>要素と同じで、<code>text-align</code>と<code>vertical-align</code>の指定が可能です。</p>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_5" class="heading_1">3つの特徴まとめ</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">以上の3つの値をまとめました。参考にしてください。</p>
+                  <img src="../../pictures/screenshots/about_display_property_11.jpg" alt="値のまとめ" title="about_display_property_11" class="image_in_main_text">
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_6" class="heading_1">参考サイト</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">サルワカ：<a href="https://saruwakakun.com/html-css/basic/display" target="_blank" rel="noopener" class="link_in_contents">https://saruwakakun.com/html-css/basic/display</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--右部(メニューバー)-->
+        <div id="menu_bar">
+          <!--検索ボックス-->
+          <!--
+          <div class="search_bar">
+            <label for="tag" class="menu_title">検索</label>
+            <div class="search_area">
+              <label for="tag"></label>
+              <input type=text value="" name="tag" id=tag class="search_box">
+              <input type=button id=search class="search_btn" value=検索>
+            </div>
+          </div>
+          -->
+          <!--もくじ-->
+          <div class="table_of_contents">
+            <p class="menu_title">もくじ</p>
+            <div id="table_of_contents_index"></div>
+          </div>
+          <!--デザイン変更ボタン-->
+          <div class="chenge_design_area">
+            <div class="menu_title">デザイン変更</div>
+            <div class="select_area">
+              <select id="select_design" class="design_bar" onclick="chenge_css_btn();">
+                <option value="simple_green">シンプル　緑</option>
+                <option value="simple_darkmode_purple">シンプル　ダークモード</option>
+                <option value="pop_blue">ポップ　青</option>
+                <option value="pop_pink">ポップ　ピンク</option>
+                <option value="pop_yellow">ポップ　黄</option>
+                <option value="pop_accessibility">ポップ　アクセシビリティ</option>
+                <option value="stylish_blue">スタイリッシュ　青</option>
+                <option value="stylish_accessibility">スタイリッシュ　アクセシビリティ</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
