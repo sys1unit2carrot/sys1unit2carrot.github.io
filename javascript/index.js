@@ -1,5 +1,5 @@
 // デザイン切り替え
-function chenge_css_btn() {
+function change_css_btn() {
   var css = "";
   var select_box = document.getElementById("select_design");
   var elem = document.getElementById("css_design");
