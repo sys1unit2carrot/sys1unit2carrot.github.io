@@ -213,6 +213,19 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
   }
+  /* Firefoxのみ有効 */
+  _:lang(x)::-moz-placeholder, #menu_bar {
+    background-color: #06565B;
+    display: inline-block;
+    width: 230px;
+    padding: 30px 30px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
   
 /* メニュー見出し */
@@ -309,6 +322,16 @@ body {
   position: relative;
   top: 14px;
   right: 17%;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #C9CBFF;
+  pointer-events: none;
+}
+_:lang(x)::-moz-placeholder, .select_area::after {
+  content: '';
+  position: relative;
+  top: -18px;
+  left: 80%;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #C9CBFF;
