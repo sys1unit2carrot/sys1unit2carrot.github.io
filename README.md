@@ -29,7 +29,7 @@
     // main を base に branch を作成する
     $ git checkout -b {ブランチ名}
 
-    // ブランチ名を css_selector にした場合
+    例：ブランチ名を css_selector にした場合
     $ git checkout -b css_selector
   ~~~
 
@@ -90,7 +90,7 @@
     // branch を追加
     $ git push origin {ブランチ名}
 
-    // ブランチ css_selector に view/css/css_selector.html を追加する場合
+    例：ブランチ css_selector に view/css/css_selector.html を追加する場合
     $ git add view/css/css_selector.html
     $ git commit -m "Add selector html."
     $ git push origin css_selector
