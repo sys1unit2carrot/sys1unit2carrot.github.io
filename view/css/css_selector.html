@@ -30,7 +30,7 @@
           <!--Tips一覧部-->
           <div id="tips_detail">
             <!--Tipsタイトル-->
-            <div id="tips_title">CSSのセレクタ</div>
+            <div id="tips_title">CSSセレクタ</div>
 
             <!--見出しブロック-->
             <div class="article_block">
@@ -39,7 +39,7 @@
               <!--本文-->
               <div class="textarea">
                 <div class="lang_div">
-                  <p class="main_text">CSSでスタイルを定義するときに、適用したい要素を指定することができます。<br>これに用いられるのがCSSセレクタで、CSSセレクタにはいくつかの書き方があるので紹介します。<br>※テストです。時間があるときに続きを書きます。</p>
+                  <p class="main_text">CSS でスタイルを定義するときに、適用させたい要素を指定することができます。<br>これに用いられるのが CSS セレクタで、CSS セレクタにはいくつかの書き方があるので紹介します。</p>
                 </div>
               </div>
             </div>
@@ -52,24 +52,298 @@
               <div class="textarea">
                 <div class="lang_div">
                   <p class="heading_2">全称セレクタ(ユニバーサルセレクタ)</p>
-                  <p class="main_text">全ての要素を対象とする。<br>「*」を記述。「*」はCSSではすべての要素という意味を持つ。<br>HTMLで全ての要素にかかるstyleなので初期状態として使える。<br>セレクタの中で一番優先度が低いので他のセレクタなどで簡単に打ち消せる。</p>
+                  <p class="main_text">全ての要素を対象とする。<br>「*」を記述。「*」は CSS ではすべての要素という意味を持つ。<br>HTML で全ての要素にかかる style なので初期状態として使える。<br>セレクタの中で一番優先度が低いので他のセレクタなどで簡単に打ち消せる。</p>
 <pre>
 * {
   color: red;
 }
 </pre>
                 </div>
+
                 <div class="lang_div">
                     <p class="heading_2">要素型セレクタ(タイプセレクタ)</p>
-                    <p class="main_text">指定した要素にかかるstyle。一般的によく見るやつ。</p>
+                    <p class="main_text">指定した要素にかかる style。一般的によく見るやつ。</p>
 <pre>
 text {
   color: red;
 }
 </pre>
                 </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">IDセレクタ</p>
+                  <p class="main_text">ID の指定があるときに使用される style。「#」を先頭に付けると ID セレクタになる。</p>
+<pre>
+#text {
+color: red;
+}
+
+<h1 id="text">赤で表示される</h1>
+</pre>
+                  <p class="main_text">HTML 記述時は「#」を付けない。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">クラスセレクタ</p>
+                  <p class="main_text">クラスの指定があるときに使用される style。「.」を先頭に付けると ID セレクタになる。</p>
+<pre>
+.text {
+color: red;
+}
+
+<h1 class="text">赤で表示される</h1>
+</pre>
+                 <p class="main_text">HTML 記述時は「.」を付けない。<br>また、「.」の前に要素を指定することもでき、</p>
+<pre>
+h1.text {
+  color: red;
+}
+
+<h1 class="text">赤で表示される</h1>
+<p class="text">赤で表示されない</p>
+</pre>
+                 <p class="main_text">のようにすることもできる。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">属性セレクタ</p>
+                  <p class="main_text">HTML で要素にセットで記述する id や class などを属性という。<br>属性セレクタは要素が特定の属性を持つときだけ対象に適用。</p>
+<pre>
+h1[id] {
+  color: red;
+}
+
+<h1 id="text">赤で表示される</h1>
+<h1>赤で表示されない</h1>
+</pre>
+                  <p class="main_text">セレクタの指定なしで属性のみ指定することも可能。</p>
+<pre>
+[id] {
+  color: red;
+}
+</pre>
+                  <p class="main_text">属性を複数指定することも可能で属性の値まで指定することも可能。</p>
+<pre>
+  h1[id="text"][class] {
+    color: red;
+  }
+</pre>
+                  <p class="main_text">属性の値が複数ある場合、指定した属性の値がどれかと合致していたら適用。</p>
+<pre>
+p[class~="p3"]{
+  color: red;
+}
+
+<p class="p1 p2 p3">赤で表示される</p>
+<p class="p4 p5 p6">赤で表示されない</p>
+</pre>
+                  <p class="main_text">属性の値が指定した文字から始まる場合に適用。</p>
+<pre>
+p[name^="abc"] {
+  color: red;
+}
+
+<p name="abc123">赤で表示される</p>
+</pre>
+                  <p class="main_text">属性の値が指定した文字で終わる場合に適用。</p>
+<pre>
+p[name$="123"] {
+  color: red;
+}
+
+<p name="abc123">赤で表示される</p>
+</pre>
+<p class="main_text">属性の値に指定した文字が含まれている場合に適用。</p>
+<pre>
+p[name＊="c1"] {
+  color: red;
+}
+
+<p name="abc123">赤で表示される</p>
+</pre>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">疑似クラス</p>
+                  <p class="main_text">カーソルが重なった時などに要素全体に対して処理が行われる。<br>例 hover, active, linkなど</p>
+                </div>
+              
+                <div class="lang_div">
+                  <p class="heading_2">疑似要素</p>
+                  <p class="main_text">要素全体ではなく要素の先頭のみなど特定の位置を対象としたいときに使用。<br>例 before, after, first-letter, first-lineなど<br><br>疑似要素については
+                    <a href="https://sys1unit2carrot.github.io/view/css/css_pseudo_element.html" target="_blank" rel="noopener" class="link_in_contents">こちら</a>
+                  </p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">グループ化セレクタ</p>
+                  <p class="main_text">複数の要素に同じ style を適用させたいときに使用。3つ以上でも可能。</p>
+<pre>
+h1, p {
+  color: red;
+}
+
+<h1>赤で表示される</h1>
+<p>赤で表示される</p>
+<div>赤で表示されない</div>
+</pre>
+                </div>
+              
+                <div class="lang_div">
+                  <p class="heading_2">子孫結合子</p>
+                  <p class="main_text">タグがネスト状態の時に指定した親要素と子要素の時のみ適用される。<br>初めが親、後が子で記述する。</p>
+<pre>
+div span {
+  color: red;
+}
+
+<div>
+  <span>赤で表示される</span>
+</div>
+<span>赤で表示されない</span>
+</pre>
+                  <p class="main_text">子要素の中の子要素は孫要素になり、以下の状態でも適用される。</p>
+<pre>
+<div>
+  <p>赤で表示されない
+    <span>赤で表示される</span>
+  </p>
+</div>
+</pre>
+                  <p class="main_text">3つ以上のセレクタで div p span なども可能。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">子結合子</p>
+                  <p class="main_text">子要素のみを対象にして孫要素は対象にしない。「>」で区切って使用。</p>
+<pre>
+div > span {
+  color: red;
+}
+
+<div>
+  <span>赤で表示される</span>
+  <p>赤で表示されない
+    <span>赤で表示されない</span>
+  </p>
+</div>
+</pre>
+                  <p class="main_text">3つ以上のセレクタで div > p > span なども可能。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">隣接兄弟結合子</p>
+                  <p class="main_text">同じ階層にある次の要素のみ適用される。「+」で区切って使用。</p>
+<pre>
+h1 + p {
+  color: red;
+}
+
+<h1>赤で表示されない</h1>
+<p>赤で表示される</p>
+<p>赤で表示されない</p>
+</pre>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">後続兄弟結合子</p>
+                  <p class="main_text">同じ階層にある後続の要素全てに適用される。「~」で区切って使用。</p>
+<pre>
+h1 ~ p {
+  color: red;
+}
+
+<h1>赤で表示されない</h1>
+<p>赤で表示される</p>
+<p>赤で表示される</p>
+<span>赤で表示されない</span>
+</pre>
+                </div>
               </div>
             </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_3" class="heading_1">CSSセレクタの優先順位</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">style を定義するとき同じプロパティを2回記述した場合、後に書いた方が優先される。</p>
+<pre>
+text {
+  color: red;
+  color: blue;
+}
+</pre>
+                  <p class="main_text">この場合は blue になる。<br><br>同じセレクタ名で2つ定義したとき、後に書いた方が優先される。</p>
+<pre>
+  text {
+    color: red;
+  }
+  
+  text {
+    color: blue;
+  }
+</pre>
+                  <p class="main_text">この場合は blue になる。<br><br>例えば下のような状態があったとする。</p>
+<pre>
+p {
+  color: red;
+}
+
+#text {
+  color: blue;
+}
+
+<p id="text">ここの色は？</p>
+</pre>
+                  <p class="main_text">この場合、「ここの色は？」という文字は青になる。<br><br>CSS セレクタには適用される優先順位があり、この場合は ID セレクタが優先されている。<br>全体の優先順位を数値化すると、</p>
+<table border="1" style="margin-left: 10%;">
+  <tr><td>全称セレクタ</td><td style="text-align:right">0</td></tr>
+  <tr><td>要素型セレクタ</td><td style="text-align:right">1</td></tr>
+  <tr><td>疑似要素</td><td style="text-align:right">1</td></tr>
+  <tr><td>疑似クラス</td><td style="text-align:right">10</td></tr>
+  <tr><td>クラスセレクタ</td><td style="text-align:right">10</td></tr>
+  <tr><td>IDセレクタ</td><td style="text-align:right">100</td></tr>
+  <tr><td>要素に直書き</td><td style="text-align:right">1000</td></tr>
+</table>
+                  <p class="main_text">となり、適用されている style の中で一番数値の大きいものが優先される。</p>
+<pre>
+.text {
+  color: red;
+}
+.text p {
+  color: blue;
+}
+</pre>
+                  <p class="main_text">この場合は、.text は10、 .text p は10と1で11、なので blue が優先される。<br>点数が同じ場合はあとに書いた方が優先される。</p>
+                  <p class="heading_2">!important 宣言</p>
+                  <p class="main_text">紹介したように CSS セレクタには優先順位が存在するが、これは必ず適用させたいというものは !important を記述することで最優先で適用させることができる。</p>
+<pre>
+p {
+  color: red !important;
+}
+</pre>
+<p class="main_text">注意点として、簡単に優先度を上げられるが別 style が適用されなくなるので事故を起こしやすかったり構造がわかりにくくなることもあるので極力使用せず CSS セレクタの優先度に従って書く方が安全。</p>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_1" class="heading_1">参考サイト</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">ホームページ入門サイト：
+                    <a href="https://beginners-hp.com/create_css_selector.html" target="_blank" rel="noopener" class="link_in_contents">https://saruwakakun.com/html-css/basic/margin-padding</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
         <!--右部(メニューバー)-->
