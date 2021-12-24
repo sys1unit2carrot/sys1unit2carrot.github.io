@@ -57,17 +57,25 @@
 * {
   color: red;
 }
+
+<h1>赤で表示される</h1>
+<p>赤で表示される</p>
 </pre>
+                  <img src="../../pictures/screenshots/css_selector/display_check3.jpg" alt="赤表示確認のスクリーンショット" title="display_check3" class="image_in_main_text" style="width: 40%;">
                 </div>
 
                 <div class="lang_div">
-                    <p class="heading_2">要素型セレクタ(タイプセレクタ)</p>
-                    <p class="main_text">指定した要素にかかる style。一般的によく見るやつ。</p>
+                  <p class="heading_2">要素型セレクタ(タイプセレクタ)</p>
+                  <p class="main_text">指定した要素にかかる style。一般的によく見るやつ。</p>
 <pre>
-text {
+h1 {
   color: red;
 }
+
+<h1>赤で表示される</h1>
+<p>赤で表示されない</p>
 </pre>
+                  <img src="../../pictures/screenshots/css_selector/display_check2.jpg" alt="赤表示確認のスクリーンショット" title="display_check2" class="image_in_main_text" style="width: 40%;">
                 </div>
 
                 <div class="lang_div">
@@ -79,8 +87,10 @@ color: red;
 }
 
 <h1 id="text">赤で表示される</h1>
+<h1 id="text2">赤で表示されない</h1>
 </pre>
-                  <p class="main_text">HTML 記述時は「#」を付けない。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check.jpg" alt="赤表示確認のスクリーンショット" title="display_check" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>HTML 記述時は「#」を付けない。</p>
                 </div>
 
                 <div class="lang_div">
@@ -92,8 +102,10 @@ color: red;
 }
 
 <h1 class="text">赤で表示される</h1>
+<h1 class="text2">赤で表示されない</h1>
 </pre>
-                 <p class="main_text">HTML 記述時は「.」を付けない。<br>また、「.」の前に要素を指定することもでき、</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check.jpg" alt="IDセレクタのスクリーンショット" title="display_check" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>HTML 記述時は「.」を付けない。<br>また、「.」の前に要素を指定することもでき、</p>
 <pre>
 h1.text {
   color: red;
@@ -102,7 +114,8 @@ h1.text {
 <h1 class="text">赤で表示される</h1>
 <p class="text">赤で表示されない</p>
 </pre>
-                 <p class="main_text">のようにすることもできる。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check.jpg" alt="赤表示確認のスクリーンショット" title="display_check" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>のようにすることもできる。</p>
                 </div>
 
                 <div class="lang_div">
@@ -116,19 +129,28 @@ h1[id] {
 <h1 id="text">赤で表示される</h1>
 <h1>赤で表示されない</h1>
 </pre>
-                  <p class="main_text">セレクタの指定なしで属性のみ指定することも可能。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check.jpg" alt="赤表示確認のスクリーンショット" title="display_check" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>セレクタの指定なしで属性のみ指定することも可能。</p>
 <pre>
 [id] {
   color: red;
 }
+
+<h1 id="text">赤で表示される</h1>
+<p id="text">赤で表示される</p>
 </pre>
-                  <p class="main_text">属性を複数指定することも可能で属性の値まで指定することも可能。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check3.jpg" alt="赤表示確認のスクリーンショット" title="display_check3" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>属性を複数指定することも可能で属性の値まで指定することも可能。</p>
 <pre>
-  h1[id="text"][class] {
-    color: red;
-  }
+h1[id="text"][class] {
+  color: red;
+}
+
+<h1 id="text" class="abc123">赤で表示される</h1>
+<h1 id="text">赤で表示されない</h1>
 </pre>
-                  <p class="main_text">属性の値が複数ある場合、指定した属性の値がどれかと合致していたら適用。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check.jpg" alt="赤表示確認のスクリーンショット" title="display_check" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>属性の値が複数ある場合、指定した属性の値がどれかと合致していたら適用。</p>
 <pre>
 p[class~="p3"]{
   color: red;
@@ -137,30 +159,37 @@ p[class~="p3"]{
 <p class="p1 p2 p3">赤で表示される</p>
 <p class="p4 p5 p6">赤で表示されない</p>
 </pre>
-                  <p class="main_text">属性の値が指定した文字から始まる場合に適用。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check.jpg" alt="赤表示確認のスクリーンショット" title="display_check" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>属性の値が指定した文字から始まる場合に適用。</p>
 <pre>
 p[name^="abc"] {
   color: red;
 }
 
 <p name="abc123">赤で表示される</p>
+<p name="cba123">赤で表示されない</p>
 </pre>
-                  <p class="main_text">属性の値が指定した文字で終わる場合に適用。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check.jpg" alt="赤表示確認のスクリーンショット" title="display_check" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>属性の値が指定した文字で終わる場合に適用。</p>
 <pre>
 p[name$="123"] {
   color: red;
 }
 
 <p name="abc123">赤で表示される</p>
+<p name="abc321">赤で表示されない</p>
 </pre>
-<p class="main_text">属性の値に指定した文字が含まれている場合に適用。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check.jpg" alt="赤表示確認のスクリーンショット" title="display_check" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>属性の値に指定した文字が含まれている場合に適用。</p>
 <pre>
 p[name＊="c1"] {
   color: red;
 }
 
 <p name="abc123">赤で表示される</p>
+<p name="cba123">赤で表示されない</p>
 </pre>
+                  <img src="../../pictures/screenshots/css_selector/display_check.jpg" alt="赤表示確認のスクリーンショット" title="display_check" class="image_in_main_text" style="width: 40%;">
                 </div>
 
                 <div class="lang_div">
@@ -187,6 +216,7 @@ h1, p {
 <p>赤で表示される</p>
 <div>赤で表示されない</div>
 </pre>
+                  <img src="../../pictures/screenshots/css_selector/display_check4.jpg" alt="赤表示確認のスクリーンショット" title="display_check4" class="image_in_main_text" style="width: 40%;">
                 </div>
               
                 <div class="lang_div">
@@ -202,7 +232,8 @@ div span {
 </div>
 <span>赤で表示されない</span>
 </pre>
-                  <p class="main_text">子要素の中の子要素は孫要素になり、以下の状態でも適用される。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check5.jpg" alt="赤表示確認のスクリーンショット" title="display_check5" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>子要素の中の子要素は孫要素になり、以下の状態でも適用される。</p>
 <pre>
 <div>
   <p>赤で表示されない
@@ -210,7 +241,8 @@ div span {
   </p>
 </div>
 </pre>
-                  <p class="main_text">3つ以上のセレクタで div p span なども可能。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check6.jpg" alt="赤表示確認のスクリーンショット" title="display_check6" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>3つ以上のセレクタで div p span なども可能。</p>
                 </div>
 
                 <div class="lang_div">
@@ -228,7 +260,8 @@ div > span {
   </p>
 </div>
 </pre>
-                  <p class="main_text">3つ以上のセレクタで div > p > span なども可能。</p>
+                  <img src="../../pictures/screenshots/css_selector/display_check7.jpg" alt="赤表示確認のスクリーンショット" title="display_check7" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text"><br>3つ以上のセレクタで div > p > span なども可能。</p>
                 </div>
 
                 <div class="lang_div">
@@ -243,6 +276,7 @@ h1 + p {
 <p>赤で表示される</p>
 <p>赤で表示されない</p>
 </pre>
+                  <img src="../../pictures/screenshots/css_selector/display_check8.jpg" alt="赤表示確認のスクリーンショット" title="display_check8" class="image_in_main_text" style="width: 40%;">
                 </div>
 
                 <div class="lang_div">
@@ -258,6 +292,7 @@ h1 ~ p {
 <p>赤で表示される</p>
 <span>赤で表示されない</span>
 </pre>
+                  <img src="../../pictures/screenshots/css_selector/display_check9.jpg" alt="赤表示確認のスクリーンショット" title="display_check9" class="image_in_main_text" style="width: 40%;">
                 </div>
               </div>
             </div>
@@ -318,14 +353,16 @@ p {
 }
 </pre>
                   <p class="main_text">この場合は、.text は10、 .text p は10と1で11、なので blue が優先される。<br>点数が同じ場合はあとに書いた方が優先される。</p>
-                  <p class="heading_2">!important 宣言</p>
-                  <p class="main_text">紹介したように CSS セレクタには優先順位が存在するが、これは必ず適用させたいというものは !important を記述することで最優先で適用させることができる。</p>
+                  <div class="lang_div">
+                    <p class="heading_2">!important 宣言</p>
+                    <p class="main_text">紹介したように CSS セレクタには優先順位が存在するが、これは必ず適用させたいというものは !important を記述することで最優先で適用させることができる。</p>
 <pre>
 p {
   color: red !important;
 }
 </pre>
 <p class="main_text">注意点として、簡単に優先度を上げられるが別 style が適用されなくなるので事故を起こしやすかったり構造がわかりにくくなることもあるので極力使用せず CSS セレクタの優先度に従って書く方が安全。</p>
+                  </div>
                 </div>
               </div>
             </div>
