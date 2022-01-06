@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset='utf-8'>
+    <title>うにてぃっぷす - CSSの疑似要素</title>
+    <link id="css_design" rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
+    <link rel="icon" href="../../pictures/sushi_uni.png">
+    <script src="../../javascript/page.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="System1 Unit2のメンバーが使うTipsサイトです。作業に詰まったとき、備忘録を残したいときに覗いてください。">
+  </head>
+
+  <body>
+    <!--boby全体-->
+    <div class="container">
+      <!--ヘッダー-->
+      <header class="header">
+        <h1 class="header__title">うにてぃっぷす</h1>
+      </header>
+
+      <!--Homeリンク-->
+      <div class="return_bar">
+        <a href="../index.html" class="home_url">Home</a>
+      </div>
+  
+      <!--ヘッダー下全体-->
+      <div id="body">
+        <!--左部(本文)-->
+        <div id="main">
+          <!--Tips一覧部-->
+          <div id="tips_detail">
+            <!--Tipsタイトル-->
+            <div id="tips_title">React Hooks</div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_1" class="heading_1">React Hooksとは</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">React hooks とは、クラスコンポーネントを使用せずに state などの React の機能を使うための機能です。<br>メリットとしてクラスコンポーネントを使用せず関数コンポーネントを使用することから、constructor での state 定義や this による複雑化がなくなりコードが読みやすくなります。</p>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_2" class="heading_1">React hooksの機能紹介</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="heading_2">useState</p>
+                  <p class="main_text">関数コンポーネント専用の保存領域を作成してもらい、そのデータを読み書きできる hook です。<br>関数コンポーネントのトップレベルで宣言します。</p>
+<pre>
+const [変数, 変数を値を変更するための関数] = useState(変数の初期値);
+</pre>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useEffect</p>
+                  <p class="main_text">ここに渡された関数は、レンダリング後に処理が走ります。<br>クラスコンポーネントの componentDidMount、componentDidUpdate、componentWillUnmount の役割があります。<br>関数コンポーネントのトップレベルで宣言します。</p>
+<pre>
+useEffect(() => {
+  //第1引数は関数を記述
+},[第2引数:関数に依存する変数や配列])
+</pre>
+                  <p class="main_text">第2引数を省略した場合、コンポーネントがレンダリングされる度に第1引数で渡した処理が走ります。<br>第2引数を省略するとレンダリングの度に実行されるから無限ループしやすいこともあって基本的には省略しないらしい？</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useContext</p>
+                  <p class="main_text">コンポーネント間のデータの受け渡しで使用する hook です。<br>Context というグローバル変数のようなものを親コンポーネントで定義して、子コンポーネントで useContext を使用して受け取って使用します。<br>useState と一緒に使用することで子コンポーネント側で useState の値を変更したりできます。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useReducer</p>
+                  <p class="main_text">useState と同様に state を管理することができる hook です。<br>複数の値を使用した複雑な state のロジックがある場合や、前の state の値に基づいて次の state を決定する場合などに useReducer を使用します。</p>
+<pre>
+const [state, dispatch] = useReducer(reducer関数, stateの初期値);
+</pre>
+                  <p class="main_text">dispatch：reducer 関数を実行するための呼び出し関数</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useCallback</p>
+                  <p class="main_text">関数を保持するための hook です。<br>通常の関数定義の場合だと再レンダリングの度に実行されますが、関数内の state が変更されていない場合はその必要はありません。<br>そのため useCallback を使用することで指定した state が変更されたときのみ再計算を行うといった処理にできるのでパフォーマンス向上につながります。</p>
+                </div>
+                
+                <div class="lang_div">
+                  <p class="heading_2">useMemo</p>
+                  <p class="main_text">useCallback とは違い、関数の結果の値を保持するための hook です。<br>毎回結果が同じ場合の値などを保存してそこからデータを再取得することで不要な再計算を省略してパフォーマンス向上につながります。</p>
+<pre>
+useMemo(() => {
+    //第1引数は関数を記述
+    },[第2引数:関数に依存する変数や配列])
+</pre>
+                  <p class="main_text">第2引数の値が変更されたときのみ再計算を行います。<br>基本的にコストのかかる計算が含まれるときに使用、低コストで使用すると余計にコストがかかることも。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useRef</p>
+                  <p class="main_text">useRef を使用すると ref オブジェクトが生成でき、これを HTML タグの ref 属性に設定すると DOM 操作が可能になります。<br>また、useState 同様、値を保持するのに使用します。値が変更されても再レンダリングが行われません。</p>
+<pre>
+const refObject = useRef(0);
+</pre>
+                  <p class="main_text">useRef を状態保持を目的に使う場合は、引数に数字や文字列などを設定。</p>
+<pre>
+const refObject = useRef(null);
+</pre>
+                  <p class="main_text">useRef を DOM 操作のために使う場合は、引数に null を設定。</p>
+                </div>
+
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_5" class="heading_1">参考サイト</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">こちらの関連する記事からそれぞれ Hooks の説明に飛べます。</p>
+                  <p class="main_text">REFFECT：<a href="https://reffect.co.jp/react" target="_blank" rel="noopener" class="link_in_contents">https://reffect.co.jp/react</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--右部(メニューバー)-->
+        <div id="menu_bar">
+          <!--検索ボックス-->
+          <!--
+          <div class="search_bar">
+            <label for="tag" class="menu_title">検索</label>
+            <div class="search_area">
+              <label for="tag"></label>
+              <input type=text value="" name="tag" id=tag class="search_box">
+              <input type=button id=search class="search_btn" value=検索>
+            </div>
+          </div>
+          -->
+          <!--もくじ-->
+          <div class="table_of_contents">
+            <p class="menu_title">もくじ</p>
+            <div id="table_of_contents_index"></div>
+          </div>
+          <!--デザイン変更ボタン-->
+          <div class="change_design_area">
+            <div class="menu_title">デザイン変更</div>
+            <div class="select_area">
+              <select id="select_design" class="design_bar" onchange="change_css_btn();">
+                <option value="simple_green">シンプル　緑</option>
+                <option value="simple_darkmode_purple">シンプル　ダークモード</option>
+                <option value="pop_blue">ポップ　青</option>
+                <option value="pop_pink">ポップ　ピンク</option>
+                <option value="pop_yellow">ポップ　黄</option>
+                <option value="pop_accessibility">ポップ　アクセシビリティ</option>
+                <option value="stylish_blue">スタイリッシュ　青</option>
+                <option value="stylish_accessibility">スタイリッシュ　アクセシビリティ</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
