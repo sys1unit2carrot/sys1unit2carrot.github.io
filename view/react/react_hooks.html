@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset='utf-8'>
-    <title>うにてぃっぷす - CSSの疑似要素</title>
+    <title>うにてぃっぷす - React Hooks</title>
     <link id="css_design" rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
     <link rel="icon" href="../../pictures/sushi_uni.png">
     <script src="../../javascript/page.js"></script>
@@ -54,8 +54,15 @@
                   <p class="heading_2">useState</p>
                   <p class="main_text">関数コンポーネント専用の保存領域を作成してもらい、そのデータを読み書きできる hook です。<br>関数コンポーネントのトップレベルで宣言します。</p>
 <pre>
-const [変数, 変数を値を変更するための関数] = useState(変数の初期値);
+const [変数, 変数の値を変更するための関数] = useState(変数の初期値);
 </pre>
+                  <p class="main_text">例えば、</p>
+<pre>
+const [count, setCount] = useState(0);
+
+setCount(10);
+</pre>
+                  <p class="main_text">のように使用し、この場合は初期の count が 0 で setCount で 10 を代入したことになります。</p>
                 </div>
 
                 <div class="lang_div">
@@ -66,7 +73,21 @@ useEffect(() => {
   //第1引数は関数を記述
 },[第2引数:関数に依存する変数や配列])
 </pre>
-                  <p class="main_text">第2引数を省略した場合、コンポーネントがレンダリングされる度に第1引数で渡した処理が走ります。<br>第2引数を省略するとレンダリングの度に実行されるから無限ループしやすいこともあって基本的には省略しないらしい？</p>
+                  <p class="main_text">例えば先ほどの useState と一緒に使用して下記の状況があったとします。</p>
+<pre>
+const [count, setCount] = useState(0);
+
+useEffect(()=>{
+  console.log('useEffectが実行されました')
+},[count])
+
+<h1>Count: { count }</h1>
+<button onClick="setCount(count+1)">Count+</button>
+
+※必要最低限の情報のみになっています。
+</pre>
+                  <p class="main_text">Count+ というボタンをクリックすると count が 1 加算されるという単純なコードです。<br>まずこのコードによってコンポーネントがレンダリングされたとき、useEffect は実行されます。<br>その後ボタンをクリックすると count の state が更新されるので再レンダリングが行われ、その度に useEffect が実行されることになります。</p>
+                  <p class="main_text">第 2 引数を省略した場合、コンポーネントがレンダリングされる度に第 1 引数で渡した処理が走ります。<br>第 2 引数を省略するとレンダリングの度に実行されるから無限ループしやすいこともあって基本的には省略しないらしい？</p>
                 </div>
 
                 <div class="lang_div">
@@ -80,7 +101,8 @@ useEffect(() => {
 <pre>
 const [state, dispatch] = useReducer(reducer関数, stateの初期値);
 </pre>
-                  <p class="main_text">dispatch：reducer 関数を実行するための呼び出し関数</p>
+                  <p class="main_text">dispatch：reducer 関数を実行するための呼び出し関数<br>reducer 関数：内容は別で定義</p>
+                  <p class="main_text">詳しくは<a href="https://qiita.com/seira/items/2fbad56e84bda885c84c" target="_blank" rel="noopener" class="link_in_contents">こちら</a></p>
                 </div>
 
                 <div class="lang_div">
@@ -96,7 +118,31 @@ useMemo(() => {
     //第1引数は関数を記述
     },[第2引数:関数に依存する変数や配列])
 </pre>
-                  <p class="main_text">第2引数の値が変更されたときのみ再計算を行います。<br>基本的にコストのかかる計算が含まれるときに使用、低コストで使用すると余計にコストがかかることも。</p>
+                  <p class="main_text">第2引数の値が変更されたときのみ再計算を行います。</p>
+                  <p class="main_text">例えば先ほどの useState と一緒に使用して下記の状況があったとします。</p>
+<pre>
+const [count1, setCount1] = useState(0);
+const [count2, setCount2] = useState(0);
+
+// 引数の数値を2倍にして返す。
+const double = count => {
+  let i = 0;
+  // 無駄に不要なループを実行させ計算に時間をかける。
+  while (i < 1000000000) i++;
+  return count * 2;
+};
+
+const doubledCount = useMemo(() => double(count2), [count2]);
+
+<p>Counter: {count1}</p>
+<button onClick="setCount1(count1 + 1)">Increment count1</button>
+<p>Counter: {count2}, {doubledCount}</p>
+<button onClick="setCount2(count2 + 1)">Increment count2</button>
+
+※必要最低限の情報のみになっています。
+</pre>
+                  <p class="main_text">Increment count1 と Increment count2 の 2 つのボタンがあり、Increment count1 をクリックすると count1 に 1 加算されて count1 を表示、Increment count2 をクリックすると count2 に 1 加算されて count2 と count2 を 2 倍した値を表示します。<br>今回 useMemo では、count2 を第 2 引数に指定しているため Increment count1 をクリックした場合 count2 は関係ないためメモ化した値をそのまま使用します(再計算の必要がないため高速)。Increment count2 をクリックした場合は第 2 引数に使用されているため再計算が行われます。</p>
+                  <p class="main_text">基本的にコストのかかる計算が含まれるときに使用します。低コストで使用すると余計にコストがかかることも考えられます。</p>
                 </div>
 
                 <div class="lang_div">
@@ -124,6 +170,7 @@ const refObject = useRef(null);
                 <div class="lang_div">
                   <p class="main_text">こちらの関連する記事からそれぞれ Hooks の説明に飛べます。</p>
                   <p class="main_text">REFFECT：<a href="https://reffect.co.jp/react" target="_blank" rel="noopener" class="link_in_contents">https://reffect.co.jp/react</a></p>
+                  <p class="main_text">React.memo / useCallback / useMemo の使い方、使い所を理解してパフォーマンス最適化をする：<a href="https://qiita.com/soarflat/items/b9d3d17b8ab1f5dbfed2" target="_blank" rel="noopener" class="link_in_contents">https://qiita.com/soarflat/items/b9d3d17b8ab1f5dbfed2</a></p>
                 </div>
               </div>
             </div>
