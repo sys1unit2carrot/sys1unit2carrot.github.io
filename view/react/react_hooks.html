@@ -71,23 +71,40 @@ setCount(10);
 <pre>
 useEffect(() => {
   //第1引数は関数を記述
-},[第2引数:関数に依存する変数や配列])
+},[第2引数:関数に依存する変数や配列]);
 </pre>
                   <p class="main_text">例えば先ほどの useState と一緒に使用して下記の状況があったとします。</p>
 <pre>
-const [count, setCount] = useState(0);
+const [count1, setCount1] = useState(0);
+const [count2, setCount2] = useState(0);
 
 useEffect(()=>{
-  console.log('useEffectが実行されました')
-},[count])
+  console.log('useEffectが実行されました');
+},[count1]);
 
-<h1>Count: { count }</h1>
-<button onClick="setCount(count+1)">Count+</button>
+<p>Counter1: {count1}</p>
+<button onClick="setCount1(count1 + 1)">Increment count1</button>
+<p>Counter2: {count2}</p>
+<button onClick="setCount2(count2 + 1)">Increment count2</button>
 
 ※必要最低限の情報のみになっています。
 </pre>
-                  <p class="main_text">Count+ というボタンをクリックすると count が 1 加算されるという単純なコードです。<br>まずこのコードによってコンポーネントがレンダリングされたとき、useEffect は実行されます。<br>その後ボタンをクリックすると count の state が更新されるので再レンダリングが行われ、その度に useEffect が実行されることになります。</p>
-                  <p class="main_text">第 2 引数を省略した場合、コンポーネントがレンダリングされる度に第 1 引数で渡した処理が走ります。<br>第 2 引数を省略するとレンダリングの度に実行されるから無限ループしやすいこともあって基本的には省略しないらしい？</p>
+                  <p class="main_text">Increment count1, 2 というボタンをクリックすると count1, 2 に対応した Counter が 1 加算されるという単純なコードです。<br>今回 Increment count1 を 3 回、Increment count2 を 5 回クリックするとします。<br>まずこのコードによってコンポーネントがレンダリングされたとき、useEffect は実行されます。その後 Increment count1 をクリックすると、count1 が更新されるので再レンダリングが行われます。そして useEffect の第 2 引数に count1 が設定されているので useEffect が実行されます。3 回クリックすることで最初のレンダリング含め合計 4 回 useEffect が実行されます。また、Increment count2 をクリックした際は count2 は第 2 引数に関係ないため、何度クリックしても useEffect は実行されません。</p>
+
+                  <p class="main_text">例えば先ほどの例の useEffect の第 2 引数に空の配列を渡したとします。</p>
+ <pre>
+useEffect(()=>{
+  console.log('useEffectが実行されました');
+},[]);
+</pre>
+                  <p class="main_text">こうした場合は、useEffect は初回のレンダリングのみ実行されることになります。</p>
+                  <p class="main_text">また、useEffect の第 2 引数に何も渡さず省略したとします。</p>
+ <pre>
+useEffect(()=>{
+  console.log('useEffectが実行されました');
+});
+</pre>
+                  <p class="main_text">こうした場合は、useEffect は初回のレンダリング含め再レンダリングが行われる度に実行されることになります。</p>
                 </div>
 
                 <div class="lang_div">
@@ -168,8 +185,8 @@ const refObject = useRef(null);
               <!--本文-->
               <div class="textarea">
                 <div class="lang_div">
-                  <p class="main_text">こちらの関連する記事からそれぞれ Hooks の説明に飛べます。</p>
-                  <p class="main_text">REFFECT：<a href="https://reffect.co.jp/react" target="_blank" rel="noopener" class="link_in_contents">https://reffect.co.jp/react</a></p>
+                  <p class="main_text">REFFECT(関連する記事に各種あります)：<a href="https://reffect.co.jp/react" target="_blank" rel="noopener" class="link_in_contents">https://reffect.co.jp/react</a></p>
+                  <p class="main_text">【React】useEffectの第２引数って？：<br><a href="https://qiita.com/k-penguin-sato/items/9373d87c57da3b74a9e6" target="_blank" rel="noopener" class="link_in_contents">https://qiita.com/k-penguin-sato/items/9373d87c57da3b74a9e6</a></p>
                   <p class="main_text">React.memo / useCallback / useMemo の使い方、使い所を理解してパフォーマンス最適化をする：<a href="https://qiita.com/soarflat/items/b9d3d17b8ab1f5dbfed2" target="_blank" rel="noopener" class="link_in_contents">https://qiita.com/soarflat/items/b9d3d17b8ab1f5dbfed2</a></p>
                 </div>
               </div>
