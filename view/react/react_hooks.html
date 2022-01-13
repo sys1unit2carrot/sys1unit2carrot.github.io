@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset='utf-8'>
+    <title>うにてぃっぷす - React Hooks</title>
+    <link id="css_design" rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
+    <link rel="icon" href="../../pictures/sushi_uni.png">
+    <script src="../../javascript/page.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="System1 Unit2のメンバーが使うTipsサイトです。作業に詰まったとき、備忘録を残したいときに覗いてください。">
+  </head>
+
+  <body>
+    <!--boby全体-->
+    <div class="container">
+      <!--ヘッダー-->
+      <header class="header">
+        <h1 class="header__title">うにてぃっぷす</h1>
+      </header>
+
+      <!--Homeリンク-->
+      <div class="return_bar">
+        <a href="../index.html" class="home_url">Home</a>
+      </div>
+  
+      <!--ヘッダー下全体-->
+      <div id="body">
+        <!--左部(本文)-->
+        <div id="main">
+          <!--Tips一覧部-->
+          <div id="tips_detail">
+            <!--Tipsタイトル-->
+            <div id="tips_title">React Hooks</div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_1" class="heading_1">React Hooksとは</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">React hooks とは、クラスコンポーネントを使用せずに state などの React の機能を使うための機能です。<br>メリットとしてクラスコンポーネントを使用せず関数コンポーネントを使用することから、constructor での state 定義や this による複雑化がなくなりコードが読みやすくなります。</p>
+                </div>
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_2" class="heading_1">React hooksの機能紹介</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="heading_2">useState</p>
+                  <p class="main_text">関数コンポーネント専用の保存領域を作成してもらい、そのデータを読み書きできる hook です。<br>関数コンポーネントのトップレベルで宣言します。</p>
+<pre>
+const [変数, 変数の値を変更するための関数] = useState(変数の初期値);
+</pre>
+                  <p class="main_text">例えば、</p>
+<pre>
+const [count, setCount] = useState(0);
+
+setCount(10);
+</pre>
+                  <p class="main_text">のように使用し、この場合は初期の count が 0 で setCount で 10 を代入したことになります。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useEffect</p>
+                  <p class="main_text">レンダリング後に処理を走らせたいときに使用する hook です。<br>クラスコンポーネントの componentDidMount、componentDidUpdate、componentWillUnmount の役割があります。<br>関数コンポーネントのトップレベルで宣言します。</p>
+<pre>
+useEffect(() => {
+  //第1引数は関数を記述
+},[第2引数:関数に依存する変数や配列]);
+</pre>
+                  <p class="main_text">第 2 引数が変更されたときに再レンダリングのあと、第 1 引数が実行されます。</p>
+                  <p class="main_text">例えば先ほどの useState と一緒に使用して下記の状況があったとします。</p>
+<pre>
+const [count1, setCount1] = useState(0);
+const [count2, setCount2] = useState(0);
+
+useEffect(()=>{
+  console.log(`useEffectが実行されました。counter1 = ${count1}`);
+},[count1]);
+
+&lt;p&gt;Counter1: {count1}&lt;/p&gt;
+&lt;button onClick="setCount1(count1 + 1)"&gt;Increment count1&lt;/button&gt;
+&lt;p&gt;Counter2: {count2}&lt;/p&gt;
+&lt;button onClick="setCount2(count2 + 1)"&gt;Increment count2&lt;/button&gt;
+</pre>
+                  <p class="main_text">Increment count1, 2 というボタンをクリックすると count1, 2 に対応した Counter が 1 加算されるという単純なコードです。<br>今回 Increment count1 を 3 回、Increment count2 を 5 回クリックするとします。<br>まずこのコードによってコンポーネントがレンダリングされたとき、useEffect は実行されます。その後 Increment count1 をクリックすると、count1 が更新されるので再レンダリングが行われます。そして useEffect の第 2 引数に count1 が設定されているので useEffect が実行されます。3 回クリックすることで最初のレンダリング含め合計 4 回 useEffect が実行されます。また、Increment count2 をクリックした際は count2 は第 2 引数に関係ないため、何度クリックしても useEffect は実行されません。</p>
+                  <p class="main_text">また、第 2 引数で記述した変数等は第 1 引数で使用しないことも可能です。その場合単純に useEffect を作動させたいトリガーとして第 2 引数に値を設定しておくということになります。</p>
+                  <p class="main_text">先ほどの例の useEffect の第 2 引数に空の配列を渡したとします。</p>
+<pre>
+useEffect(()=>{
+  console.log('useEffectが実行されました');
+},[]);
+</pre>
+                  <p class="main_text">こうした場合は、useEffect は初回のレンダリングのみ実行されることになります。</p>
+                  <p class="main_text">また、useEffect の第 2 引数に何も渡さず省略したとします。</p>
+<pre>
+useEffect(()=>{
+  console.log('useEffectが実行されました');
+});
+</pre>
+                  <p class="main_text">こうした場合は、useEffect は初回のレンダリング含め再レンダリングが行われる度に実行されることになります。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useContext</p>
+                  <p class="main_text">コンポーネント間のデータの受け渡しで使用する hook です。<br>親コンポーネントで使用していたデータは props を介して子コンポーネントに渡すことが多いですが、useContext を使用することで層が深くても渡すことなく参照できることが強みです。</p>
+                  <p class="main_text">例として、App、ComponentA, B, C の 4 種類のコンポーネントがあり、App から ComponentC に 100 という数値を useContext を使用して渡すことを目的とします。親が App で順に A, B, C です。</p>
+<pre>
+import React from 'react';
+import ComponentA from './components/ComponentA.js'
+
+export const UserCount = React.createContext()
+
+function App() {
+  return (
+    &lt;div style={{ textAlign: 'center' }}&gt;
+      &lt;h1&gt;useContext&lt;/h1&gt;
+      &lt;UserCount.Provider value={100}&gt;
+      &lt;ComponentA/&gt;
+      &lt;/UserCount.Provider&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</pre>
+                  <p class="main_text">App から渡すための準備として、 Context の作成を行います。Context の作成は createContext で行います。そして、UserCount.Provider コンポーネントで値を渡したいコンポーネントが入っている ComponentA を囲みます(A から B、B から C と import しているため間接的に使用できるようになっている)。UserCount.Provider のタグの中では value に 100 の値を設定します。これで親コンポーネント側の準備が完了です。</p>
+<pre>
+import React from 'react'
+import ComponentB from './ComponentB'
+
+const ComponentA = () => {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Componet A&lt;/p&gt;
+        &lt;ComponentB /&gt;
+      &lt;/div&gt;
+    )
+}
+
+export default ComponentA
+</pre>
+                  <p class="main_text">UserCount.Provider で囲ったコンポーネントですが特に使用しない場合は何もする必要はありません。</p>
+<pre>
+import React from 'react'
+import ComponentC from './ComponentC'
+
+const ComponentB = () => {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Componet B&lt;/p&gt;
+        &lt;ComponentC /&gt;
+      &lt;/div&gt;
+    )
+}
+
+export default ComponentB
+</pre>
+                  <p class="main_text">こちらも何もする必要はありません。</p>
+<pre>
+import React,{useContext} from 'react'
+import { UserCount } from '../App'
+
+const ComponentC = () => {
+    const count = useContext(UserCount)
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Componet C&lt;/p&gt;
+        &lt;p&gt;{count}&lt;/p&gt;
+      &lt;/div&gt;
+    )
+}
+
+export default ComponentC
+</pre>
+                  <p class="main_text">値を使用する ComponentC での設定をします。まず、useContext と UserCount (値が入っている) の import をします。useContext(UserCount) で UserCount から取り出した値を変数に代入します。そうすることで代入された変数を使用して UserCount の値が使えたことになります。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useReducer</p>
+                  <p class="main_text">useState と同様に state を管理することができる hook です。<br>複数の値を使用した複雑な state のロジックがある場合や、前の state の値に基づいて次の state を決定する場合などに useReducer を使用します。</p>
+<pre>
+const [state, dispatch] = useReducer(reducer関数, stateの初期値);
+</pre>
+                  <p class="main_text">dispatch：reducer 関数を実行するための呼び出し関数<br>reducer 関数：dispatch で渡された情報をもとに処理を行う関数</p>
+                  <p class="main_text">例としてカウントアップ、カウントダウン、リセットの 3 種類のボタンと現在のカウントがいくつかを表示するコードがあったとします。</p>
+<pre>
+const initialState = 0
+
+const reducerFunc = (countState, action)=> {
+  switch (action){
+    case 'increment':
+      return countState + 1
+    case 'decrement':
+      return countState - 1
+    case 'reset':
+      return initialState
+    default:
+      return countState
+  }
+}
+const Counter = () => {
+  const [count, dispatch] = useReducer(reducerFunc, initialState)
+  return (
+    &lt;&gt;
+      &lt;h2>カウント：{count}&lt;/h2&gt;
+      &lt;Button onClick={()=>dispatch('increment')}&gt;カウントアップ&lt;/Button&gt;
+      &lt;Button onClick={()=>dispatch('decrement')}&gt;カウントダウン&lt;/Button&gt;
+      &lt;Button onClick={()=>dispatch('reset')}&gt;リセット&lt;/Button&gt;
+    &lt;/&gt;
+  )
+}
+</pre>
+                  <img src="../../pictures/screenshots/React_Hooks/useReducer_image.jpg" alt="useReducerのコードのイメージ" title="useReducer_image" class="image_in_main_text" style="width: 40%;">
+                  <p class="main_text" style="margin-left: 10%; margin-left: 33%;">コードのイメージ</p>
+                  <p class="main_text">Button の onClick にはそれぞれ dispatch の引数に文字列が与えられています。この文字列は action になっていて、reducer 関数側でどのような操作を行うかの判別に使われます。例えばカウントアップをクリックした場合は increment が渡され、reducerFunc で case 'increment' の処理が実行されます。ここで返ってきた値は count に格納され、今回の場合は表示に使われることになります。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useCallback</p>
+                  <p class="main_text">関数を保持するための hook です。<br>通常の関数定義の場合だと再レンダリングの度に実行されますが、指定した変数が変更されていない場合はその必要はありません。<br>そのため useCallback を使用することで指定した変数が変更されたときのみ再計算を行うといった処理にできるのでパフォーマンス向上につながります。</p>
+<pre>
+useCallback(第1引数は関数を記述, [第2引数:関数に依存する変数や配列]);
+</pre>
+                  <p class="main_text">第 2 引数の値が変更されない限りメモ化された関数を再利用します。</p>
+<pre>
+const [count1, setCount1] = useState(0);
+const [count2, setCount2] = useState(0);
+
+// Counter1 を +1 する関数を定義する。
+const countUp1 = useCallback(() => {
+  setCount1(count1 + 1);
+}, [count1]);
+
+// Counter2 を +1 する関数を定義する。
+const countUp2 = useCallback(() => {
+  setCount2(count2 + 1);
+}, [count2]);
+
+&lt;p&gt;Counter1: {count1}&lt;/p&gt;
+&lt;button onClick={countUp1}&gt;Increment count1&lt;/button&gt;
+&lt;p&gt;Counter2: {count2}&lt;/p&gt;
+&lt;button onClick={countUp2}&gt;Increment count2&lt;/button&gt;
+</pre>
+                  <p class="main_text">例えば、Counter1, 2 にそれぞれ対応したボタンがあり、ボタンをクリックすると useCallback による関数で値をインクリメントするコードがあるとします。Increment count1 をクリックした場合は countUp1 が呼ばれ count1 の値が変更されます。count1 が変更されたことにより、新たな変数データを持った関数をメモ化します。このとき再レンダリングは行われていますが count2 に値の変更はないため、countUp2 はメモ化されている関数を使用します。</p>
+                </div>
+                
+                <div class="lang_div">
+                  <p class="heading_2">useMemo</p>
+                  <p class="main_text">useCallback とは違い、関数の結果の値を保持するための hook です。<br>毎回結果が同じ場合の値などを保存してそこからデータを再取得することで不要な再計算を省略してパフォーマンス向上につながります。</p>
+<pre>
+useMemo(() => {
+    //第1引数は関数を記述
+    },[第2引数:関数に依存する変数や配列])
+</pre>
+                  <p class="main_text">第 2 引数の値が変更されたときのみ再計算を行います。</p>
+                  <p class="main_text">例として下記のコードがあったとします。</p>
+<pre>
+const [count1, setCount1] = useState(0);
+const [count2, setCount2] = useState(0);
+
+// 引数の数値を2倍にして返す。
+const double = count => {
+  let i = 0;
+  // 無駄に不要なループを実行させ計算に時間をかける。
+  while (i &lt; 1000000000) i++;
+  return count * 2;
+};
+
+const doubledCount = useMemo(() => double(count2), [count2]);
+
+&lt;p&gt;Counter1: {count1}&lt;/p&gt;
+&lt;button onClick="setCount1(count1 + 1)"&gt;Increment count1&lt;/button&gt;
+&lt;p&gt;Counter2: {count2}, {doubledCount}&lt;/p&gt;
+&lt;button onClick="setCount2(count2 + 1)"&gt;Increment count2&lt;/button&gt;
+</pre>
+                  <p class="main_text">Increment count1 と Increment count2 の 2 つのボタンがあり、Increment count1 をクリックすると count1 に 1 加算されて count1 を表示、Increment count2 をクリックすると count2 に 1 加算されて count2 と count2 を 2 倍した値を表示します。<br>今回 useMemo では、count2 を第 2 引数に指定しているため Increment count1 をクリックした場合 count2 は関係ないためメモ化した値をそのまま使用します(再計算の必要がないため高速)。Increment count2 をクリックした場合は第 2 引数に使用されているため再計算が行われます。</p>
+                  <p class="main_text">基本的にコストのかかる計算が含まれるときに使用します。低コストで使用すると余計にコストがかかることも考えられます。</p>
+                </div>
+
+                <div class="lang_div">
+                  <p class="heading_2">useRef</p>
+                  <p class="main_text">useRef を使用すると ref オブジェクトが生成でき、これを HTML タグの ref 属性に設定すると DOM 操作が可能になります。<br>また、useState 同様、値を保持するのにも使用できます。値が変更されても再レンダリングが行われません。</p>
+<pre>
+const number = useRef(10);
+
+console.log(number.current);  //100
+</pre>
+                  <p class="main_text">useRef を状態保持の目的で使う場合は、引数に数字や文字列などを設定します。値は current プロパティに設定されます。</p>
+                  <p class="main_text">useRef を DOM 操作のために使う場合は、引数に null を設定します。</p>
+<pre>
+const App = () => {
+  const inputEl = useRef(null);
+  const handleClick = () => {
+    inputEl.current.focus();
+  };
+  return (
+    &lt;&gt;
+      &lt;input ref={inputEl} type="text" /&gt;
+      &lt;button onClick={handleClick}&gt;入力エリアをフォーカスする&lt;/button&gt;
+    &lt;/&gt;
+  );
+};
+</pre>
+                  <p class="main_text">今回の例ではボタンをクリックすると input 要素にフォーカスがかかるものです。フォーカスをかけたい input 要素の ref 属性に useRef で作成したオブジェクトを指定します。ボタンをクリックすることで handleClick が呼ばれフォーカスがかかる流れになります。</p>
+                  <p class="main_text" style="margin-left: 10%; margin-left: 33%;">ボタンクリック前</p>
+                  <img src="../../pictures/screenshots/React_Hooks/useRef_before.jpg" alt="useRefのフォーカス前のスクリーンショット" title="useRef_before" class="image_in_main_text" style="width: 40%; margin-top: 0; margin-bottom: 20px;">
+                  <p class="main_text" style="margin-left: 10%; margin-left: 33%;">ボタンクリック後</p>
+                  <img src="../../pictures/screenshots/React_Hooks/useRef_after.jpg" alt="useRefのフォーカス後のスクリーンショット" title="useRef_after" class="image_in_main_text" style="width: 40%; margin-top: 0;">
+                </div>
+
+              </div>
+            </div>
+
+            <!--見出しブロック-->
+            <div class="article_block">
+              <!--題字-->
+              <div id="subtitle_5" class="heading_1">参考サイト</div>
+              <!--本文-->
+              <div class="textarea">
+                <div class="lang_div">
+                  <p class="main_text">REFFECT(関連する記事に各種あります)：<a href="https://reffect.co.jp/react" target="_blank" rel="noopener" class="link_in_contents">https://reffect.co.jp/react</a></p>
+                  <p class="main_text">React hooksを基礎から理解する：<a href="https://qiita.com/seira/items/f063e262b1d57d7e78b4" target="_blank" rel="noopener" class="link_in_contents">https://qiita.com/seira/items/f063e262b1d57d7e78b4</a></p>
+                  <p class="main_text">【React】useEffectの第２引数って？：<br><a href="https://qiita.com/k-penguin-sato/items/9373d87c57da3b74a9e6" target="_blank" rel="noopener" class="link_in_contents">https://qiita.com/k-penguin-sato/items/9373d87c57da3b74a9e6</a></p>
+                  <p class="main_text">React.memo / useCallback / useMemo の使い方、使い所を理解してパフォーマンス最適化をする：<a href="https://qiita.com/soarflat/items/b9d3d17b8ab1f5dbfed2" target="_blank" rel="noopener" class="link_in_contents">https://qiita.com/soarflat/items/b9d3d17b8ab1f5dbfed2</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--右部(メニューバー)-->
+        <div id="menu_bar">
+          <!--検索ボックス-->
+          <!--
+          <div class="search_bar">
+            <label for="tag" class="menu_title">検索</label>
+            <div class="search_area">
+              <label for="tag"></label>
+              <input type=text value="" name="tag" id=tag class="search_box">
+              <input type=button id=search class="search_btn" value=検索>
+            </div>
+          </div>
+          -->
+          <!--もくじ-->
+          <div class="table_of_contents">
+            <p class="menu_title">もくじ</p>
+            <div id="table_of_contents_index"></div>
+          </div>
+          <!--デザイン変更ボタン-->
+          <div class="change_design_area">
+            <div class="menu_title">デザイン変更</div>
+            <div class="select_area">
+              <select id="select_design" class="design_bar" onchange="change_css_btn();">
+                <option value="simple_green">シンプル　緑</option>
+                <option value="simple_darkmode_purple">シンプル　ダークモード</option>
+                <option value="pop_blue">ポップ　青</option>
+                <option value="pop_pink">ポップ　ピンク</option>
+                <option value="pop_yellow">ポップ　黄</option>
+                <option value="pop_accessibility">ポップ　アクセシビリティ</option>
+                <option value="stylish_blue">スタイリッシュ　青</option>
+                <option value="stylish_accessibility">スタイリッシュ　アクセシビリティ</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
