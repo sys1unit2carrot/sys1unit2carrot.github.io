@@ -88,7 +88,7 @@
                   <p class="heading_2">Reducer</p>
                   <p class="main_text">唯一アプリケーションの状態 (state) を書き換えられるところです。下記が reducer の使用例です。現在の状態である state と Action を受け取り、Action で指示された内容(Action の type による switch)で state に変化を加え新しい状態を作ります。この場合、 Action の type が ADD_COUNT のとき、switch で分岐して +1 の処理が行われます。</p>
 <pre>
-const Reducer = (state, action) => {
+const Reducer = (state, action) =&gt; {
   switch (action.type) {
     case 'ADD_COUNT':
       return {
@@ -122,7 +122,7 @@ const initialState = {
   count: 10,
 };
 
-const reducer = (state = initialState) => {
+const reducer = (state = initialState) =&gt; {
   return state;
 };
 
@@ -179,7 +179,7 @@ export default App;
 import { useSelector } from "react-redux";
 
 function App() {
-  const count = useSelector((state) => state.count);
+  const count = useSelector((state) =&gt; state.count);
   return (
     &lt;div className="App"&gt;
       &lt;h1&gt;Redux Learn&lt;/h1&gt;
@@ -213,7 +213,7 @@ export default App;
 </pre>
                   <p class="main_text">ActionCreator は Action を作成するための関数です。実行するとAction のオブジェクトを返します。<br>
 <pre>
-const increment = (payload) => {
+const increment = (payload) =&gt; {
     return {
       type: 'INCREMENT_COUNT',
       payload: payload
@@ -231,7 +231,7 @@ const initialState = {
   count: 10,
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) =&gt; {
   switch (action.type) {
     case 'INCREMENT_COUNT':
       return {
@@ -263,12 +263,12 @@ dispatch({ type: "INCREASE_COUNT" });
 import { useSelector, useDispatch } from "react-redux";
 
 function App() {
-  const count = useSelector((state) => state.count);
+  const count = useSelector((state) =&gt; state.count);
   const dispatch = useDispatch();
-  const increment = () => {
+  const increment = () =&gt; {
     dispatch({ type: "INCREMENT_COUNT" });
   };
-  const decrement = () => {
+  const decrement = () =&gt; {
     dispatch({ type: "DECREMENT_COUNT" });
   };
   return (
@@ -303,7 +303,7 @@ const initialState = {
   count: 10,
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) =&gt; {
   switch (action.type) {
     case 'INCREMENT_COUNT':
       return {
@@ -340,26 +340,31 @@ ReactDOM.render(
 import { useSelector, useDispatch } from "react-redux";
 
 function App() {
-  const count = useSelector((state) => state.count);
+  const count = useSelector((state) =&gt; state.count);
   const dispatch = useDispatch();
-  const increment = () => {
+  const increment = () =&gt; {
     dispatch({ type: "INCREMENT_COUNT" });
   };
-  const decrement = () => {
+  const decrement = () =&gt; {
     dispatch({ type: "DECREMENT_COUNT" });
   };
   return (
     &lt;div className="App"&gt;
       &lt;h1&gt;Redux Learn&lt;/h1&gt;
       &lt;p&gt;Count: {count}&lt;/p&gt;
-      &lt;button onClick={increase}&gt;+1&lt;/button&gt;
-      &lt;button onClick={decrease}&gt;-1&lt;/button&gt;
+      &lt;button onClick={increment}&gt;+1&lt;/button&gt;
+      &lt;button onClick={decrement}&gt;-1&lt;/button&gt;
     &lt;/div&gt;
   );
 }
 
 export default App;
 </pre>
+                <p class="main_text">下記の図が実行したときに画面になります。<br>
+                <img src="../../pictures/screenshots/redux/rendering.jpg" alt="コード実行時の画面" title="rendering" class="image_in_main_text" style="width: 30%;">
+                <p class="main_text">count には 10 という初期値が設定されています。+1 ボタンをクリックすることで count が 1 加算されます。<br>
+                <img src="../../pictures/screenshots/redux/rendering_plus1.jpg" alt="コード実行時の画面に+1した画面" title="rendering_plus1" class="image_in_main_text" style="width: 30%;">
+                <p class="main_text">+1 ボタンをクリックしたときの処理として、まず increment 関数で Dispatch が呼ばれ INCREMENT_COUNT を引数に Reducer へ渡します。Reducer では INCREMENT_COUNT に分岐した後 count に +1 した新しい state を返します。これにより Store の count が更新され再レンダリングが行われます。<br>
               </div>
             </div>
 
